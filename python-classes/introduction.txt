@@ -1,0 +1,50 @@
+Software :-
+
+  Types of S/W
+    1. System S/W
+    2. Application S/W
+    3. Web Application
+    4. Device Application
+    5. AI/ML , IOT Application
+ Why Pyhon
+ What is Python :-
+   OpenSource, Freeware, function oriented, object oriented , platform independent , interpreted high level
+   programming language
+ Object oriented Programming :-
+  Why Object Oriented :- To encapsulate the application data and function into the single unit. [Robert Lafore]
+ OOPS Concept :-
+   Class
+   Object
+   Encapuslation
+   Abstraction
+   Inheritance
+   Polymorphism
+Features :-
+  Object oriented
+  simple
+  Platform independent
+  Dynamically Typed
+  Portable
+  Multithreaded
+  High Level
+  Robust
+  Large libraries
+  etc.....
+----------------------------
+Naming convention
+Compilation process
+------------------------------------------
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
