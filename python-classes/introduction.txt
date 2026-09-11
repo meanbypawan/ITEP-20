@@ -34,11 +34,50 @@ Features :-
 Naming convention
 Compilation process
 ------------------------------------------
+DataTypes :-
+ int
+ float
+ str
+ bool
+ complex
+ list
+ tupe
+ set
+ frozenset
+ bytes
+ bytearray
+ dictionary
+ range  
+------------------------------------------------
+TypeCasting :-
+  int()
+  float()
+  bool()
+  complex()
+  str()
+------------------------------  
+  class Student:
+    pass
+  class int:
+   pass
+  s1 = Student()   
+  x = int()
+------------------------
+  String --> int
+  x = int("10000")
+  x = int("100abc00) :-  Value Error
+
+  float --> int  
   
+  bool ---> int
+    int(True) ==> 1
+    int(False) ==> 0
   
-  
-  
-  
+  String,float,bool ---> int
+--------------------------------------
+  int --> String
+  float --> String
+  bool --> String
   
   
   
