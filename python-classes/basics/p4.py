@@ -1,3 +1,9 @@
+'''
+  R  :- Read
+  E  :- Evalute
+  P  :- Print
+  L  :- Loop
+'''
 a = 20
 b = 10
 c = a + b
