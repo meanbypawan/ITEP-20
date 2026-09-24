@@ -1,0 +1,67 @@
+  List :-
+  Whenever we have to represent group of object as single unit.
+  
+  Way of creating list in python :-
+  
+  x = [10,20,30,40,50]
+  
+  2. By using list constructor
+  x = list()
+  -------------------------------------------
+  Advantage :-
+  1. List can hold duplicate data
+  2. In List we can store homogenous as well as hetrogenous type of data
+  3. In List we can store mutable and immutable object
+  4. List maintain insertion order
+  5. List is ordered
+  6. Support Indexing
+  7. Support Slicing
+  8. Growable in nature. 
+  9. List internally make use of array concept [Dynamic Array]
+  
+  Disadvantages :-
+  1. It is not suitable for Searching. [Slow searching]
+  2. Insertion and deletion in list is very costly
+  3. Consume more memory
+  4. It is not suitable for mathematical operation
+---------------------------------------------------------
+ List doesn't store original data values. it store references[pointer]
+ List Operation :-
+   Adding element
+   Remove
+   Update
+   Search
+   Iterate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
