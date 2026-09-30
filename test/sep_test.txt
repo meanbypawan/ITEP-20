@@ -1,0 +1,127 @@
+Python Intermediate Programming Test
+
+Total Questions: 5
+Topics: if-else, match-case, for loop, while loop, nested loops
+Level: Intermediate
+
+Q1. Electricity Bill Calculator — if-elif-else
+
+Write a Python program to calculate the electricity bill based on the number of units consumed.
+
+Use the following slab rates:
+
+Units	Rate
+First 100 units	₹5/unit
+Next 100 units	₹7/unit
+Next 200 units	₹10/unit
+Above 400 units	₹12/unit
+
+The program should accept the number of units from the user and calculate the total bill.
+
+Example:
+
+Enter units: 350
+Electricity Bill: ₹2700
+Q2. Simple Calculator — match-case
+
+Write a Python program that accepts:
+
+Two numbers
+An operator (+, -, *, /, %)
+
+Use match-case to perform the selected operation.
+
+The program should also handle division by zero.
+
+Example:
+
+Enter first number: 20
+Enter second number: 5
+Enter operator: /
+
+Result: 4.0
+
+For an invalid operator:
+
+Invalid operator
+Q3. Number Analysis — Loop + if-else
+
+Write a Python program that accepts a positive integer N and prints:
+
+Sum of all digits
+Number of digits
+Largest digit
+Smallest digit
+Whether the number is a palindrome
+
+Example:
+
+Enter number: 12321
+
+Sum of digits: 9
+Number of digits: 5
+Largest digit: 3
+Smallest digit: 1
+Palindrome: Yes
+
+Restriction: Do not convert the number into a string.
+
+Q4. Prime Numbers in a Range — Nested Loops
+
+Write a Python program that accepts two numbers start and end and prints all prime numbers between them.
+
+Also display the total number of prime numbers found.
+
+Example:
+
+Enter start: 10
+Enter end: 30
+
+Prime numbers:
+11 13 17 19 23 29
+
+Total prime numbers: 6
+
+Restriction: Do not use any built-in function/library for checking whether a number is prime.
+
+Q5. Student Result Menu — match-case + loops + if-else
+
+Write a menu-driven Python program for managing the result of N students.
+
+The program should repeatedly display:
+
+1. Enter student marks
+2. Display average marks
+3. Display highest marks
+4. Display lowest marks
+5. Display result
+6. Exit
+
+Use match-case for menu selection.
+
+For each student, marks are entered for:
+
+Python
+Database
+Programming
+
+A student passes only if:
+
+Marks in each subject >= 40
+Overall percentage >= 50
+
+For the Display Result option, print:
+
+Student 1: Pass
+Student 2: Fail
+Student 3: Pass
+
+The menu should continue until the user selects 6. Exit.
+
+Concepts being tested
+Question	Main Concepts
+Q1	if-elif-else, arithmetic
+Q2	match-case, operators
+Q3	while, if-else, digit manipulation
+Q4	for, nested loop, if
+Q5	match-case, loops, if-else, lists
