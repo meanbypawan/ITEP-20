@@ -1,0 +1,1012 @@
+What is a Dictionary in Python?
+==================================
+
+
+A dictionary in Python is an unordered collection of data in key-value pairs.
+ Each key must be unique, and it is used to access its corresponding value. Dictionaries are mutable,
+ meaning you can change their content after creation.
+
+Think of it like a real-world dictionary: you look up a word (key) to find its meaning (value).
+
+my_dict = {key1: value1, key2: value2, key3: value3}
+
+Creating a Dictionary:---
+
+A dictionary is created by writing key-value pairs inside { }, 
+where each key is connected to a value using colon (:). A dictionary can also be created using the dict() function.
+
+d1 = {1: 'Geeks', 2: 'For', 3: 'Geeks'}
+print(d1)
+
+# using dict() constructor
+d2 = dict(a = "Geeks", b = "for", c = "Geeks")
+print(d2)
+
+o/p
+{1: 'Geeks', 2: 'For', 3: 'Geeks'}
+{'a': 'Geeks', 'b': 'for', 'c': 'Geeks'}
+
+
+
+ex-1
+student = {
+    "name": "Ajay",
+    "age": 25,
+    "city": "Bhopal"
+}
+
+print(student)
+
+o/p
+{'name': 'Ajay', 'age': 25, 'city': 'Bhopal'}
+
+ex-2
+student = {
+    "name": "Ajay",
+    "age": 25,
+    "name": "amit"
+}
+
+print(student)
+o/p
+{'name': 'amit', 'age': 25}
+
+=>Accessing Values:--
+========================
+
+You can access values by keys:
+
+ex-
+student = {"name": "Ajay", "age": 25, "city": "Bhopal"}
+print(student["name"])  # Ajay
+print(student.get("age"))
+
+o/p
+Ajay
+25
+
+->Difference between [] and .get():
+
+[] gives an error if key not found.
+
+.get() returns None (or a default value you provide) if key not found.
+
+ex-1
+student = {"name": "Ajay", "age": 25, "city": "Bhopal"}
+print(student["country"]) 
+
+o/p
+KeyError: 'country'
+
+ex-2
+student = {"name": "Ajay", "age": 25, "city": "Bhopal"}
+#print(student["country"]) 
+print(student.get("country"))
+
+
+o/p
+None
+
+ex-3
+student = {"name": "Ajay", "age": 25, "city": "Bhopal"}
+print(student.get("country", "Not Found")) 
+
+
+o/p
+Not Found
+
+Adding and Updating Dictionary Items:--
+=====================================
+
+d = {1: 'Geeks', 2: 'For', 3: 'Geeks'}
+
+# Adding a new key-value pair
+d["age"] = 22
+
+# Updating an existing value
+d[1] = "Python dict"
+print(d)
+
+o/p
+{1: 'Python dict', 2: 'For', 3: 'Geeks', 'age': 22}
+
+Removing Elements:--
+=====================
+
+1.pop():--
+========
+Removes specific key.
+Returns removed value.
+ex-
+student = {"name": "Ajay", "age": 25, "city": "Bhopal"}
+
+print(student.pop("city"))
+print(student)
+o/p
+Bhopal
+{'name': 'Ajay', 'age': 25}
+
+
+2.popitem() Method in Python (Dictionary)
+
+popitem() is a dictionary method used to remove and return the last inserted key-value pair from the dictionary.
+
+ex-
+student = {
+    "name": "Ajay",
+    "age": 25,
+    "city": "Bhopal"
+}
+
+removed_item = student.popitem()
+
+print("Removed:", removed_item)
+print("Remaining Dictionary:", student)
+
+o/p
+Removed: ('city', 'Bhopal')
+Remaining Dictionary: {'name': 'Ajay', 'age': 25}
+
+
+ex-2  Using popitem() in Loop
+data = {
+    "A": 10,
+    "B": 20,
+    "C": 30
+}
+
+while data:
+    print(data.popitem())
+
+print(data)
+
+o/p
+('C', 30)
+('B', 20)
+('A', 10)
+{}
+Items are removed in reverse insertion order.
+
+Example 3 – Handling Empty Dictionary
+d = {}
+
+d.popitem()
+o/p
+KeyError: 'popitem(): dictionary is empty'
+
+=>Difference Between pop() and popitem():--
+
+| Method      | Removes                    | Requires Key | Return Type        |
+| ----------- | -------------------------- | ------------ | ------------------ |
+| `pop(key)`  | Removes specific key       | Yes          | Value              |
+| `popitem()` | Removes last inserted pair | No           | Tuple (key, value) |
+---------------------------------------------------------------------------------
+
+3 del:--
+===========
+
+del is used to delete objects in Python.
+It can remove:
+
+Variables
+
+List elements
+
+Dictionary elements
+
+Entire objects
+
+Slices of sequences
+
+ex-1
+student = {
+    "name": "Ajay",
+    "age": 25,
+    "city": "Bhopal"
+}
+
+del student["age"]
+
+print(student)
+o/p
+{'name': 'Ajay', 'city': 'Bhopal'}
+
+ex-2
+student = {
+    "name": "Ajay",
+    "age": 25
+}
+
+del student
+
+print(student)
+
+o/p
+NameError: name 'student' is not defined
+
+ex-3
+student = {"name": "Ajay"}
+
+del student["age"]
+o/p
+KeyError: 'age'
+del throws error if key does not exist.
+
+ex-4  Safe Way (Check Before Delete)
+student = {"name": "Ajay"}
+
+if "age" in student:
+    del student["age"]
+
+NOTE:
+When to Use del in Dictionary
+
+✅ When you just want to remove data
+✅ When return value is not needed
+✅ When deleting entire dictionary
+
+
+4.clear()
+==========
+Removes everything.
+
+ex-1
+student = {"name": "Ajay"}
+
+student.clear()
+print(student)
+
+o/p
+{}
+
+
+Important Dictionary Methods:----
+1 keys() Method
+--------------------------------
+Returns all keys of the dictionary.
+
+👉 It does NOT return a list directly.
+👉 It returns a special object called dict_keys.
+
+
+ex-1
+student = {
+    "name": "Ajay",
+    "age": 25,
+    "city": "Bhopal"
+}
+
+print(student.keys())
+
+o/p
+dict_keys(['name', 'age', 'city'])
+
+
+ex-2:--- 
+student = {
+    "name": "Ajay",
+    "age": 25,
+    "city": "Bhopal"
+}
+
+print(student.keys())
+print(list(student.keys()))
+o/p
+['name', 'age', 'city']
+
+2.values() Method
+===================
+
+Returns all values of dictionary.
+
+ex-1
+student = {
+    "name": "Ajay",
+    "age": 25,
+    "city": "Bhopal"
+}
+
+print(student.values())
+print(list(student.values()))
+
+o/p
+dict_values(['Ajay', 25, 'Bhopal'])
+['Ajay', 25, 'Bhopal']
+
+
+3 items() Method (Very Important):--
+------------------------------------
+Returns both keys and values as tuple pairs.
+
+ex-
+student = {
+    "name": "Ajay",
+    "age": 25,
+    "city": "Bhopal"
+}
+
+print(student.items())
+
+o/p
+dict_items([('name', 'Ajay'), ('age', 25), ('city', 'Bhopal')])
+
+ex-2
+student = {
+    "name": "Ajay",
+    "age": 25,
+    "city": "Bhopal"
+}
+
+for key, value in student.items():
+    print(key, value)
+
+o/p
+name Ajay
+age 25
+city Bhopal
+
+
+
+4 update() Method:--
+------------------
+Adds or updates dictionary using another dictionary or key-value pair.
+ex-1
+student = {"name":"Ajay"}
+
+student.update({"age":25})
+
+print(student)
+
+o/p
+{'name': 'Ajay', 'age': 25}
+
+
+ex-2
+student = {'name':'Ajay','age':30}
+
+student.update({"age":25})
+
+print(student)
+
+o/p
+{'name': 'Ajay', 'age': 25}
+
+ex-3  Add Multiple Values
+
+student = {'name':'Ajay','age':30}
+
+student.update({"city":"Bhopal","phone":"99999"})
+
+print(student)
+
+o/p
+{'name': 'Ajay', 'age': 30, 'city': 'Bhopal', 'phone': '99999'}
+
+
+NOTE:If key exists → value updated
+👉 If key not exists → new key inserted
+
+5 copy() Method:--
+-------------------
+Creates shallow copy of dictionary.
+
+ex-1
+student = {"name":"Ajay","age":25}
+
+new_student = student.copy()
+
+print(new_student)
+
+o/p
+{'name': 'Ajay', 'age': 25}
+
+
+ex-2
+student = {"name":"Ajay","age":25}
+
+new_student = student.copy()
+
+student.update({"address":"indore"})
+print(new_student)
+print(student)
+
+o/p
+{'name': 'Ajay', 'age': 25}
+{'name': 'Ajay', 'age': 25, 'address': 'indore'}
+
+NOTE:--Important Concept — Shallow Copy
+
+👉 Only outer dictionary copied.
+👉 Nested objects remain shared.
+
+
+ex-3
+student = {"name":"Ajay","marks":[90,80]}
+
+new_student = student.copy()
+
+new_student["marks"][0] = 50
+
+print(student)
+
+o/p
+{'name': 'Ajay', 'marks': [50, 80]}
+
+
+
+
+=>Dictionary Comprehension in Python (VERY IMPORTANT 🔥)
+=======================================================================
+
+Dictionary comprehension is a short and powerful way to create dictionaries in Python using a single line of code.
+
+It works similar to list comprehension, but it creates a dictionary instead of a list.
+
+
+syntax:--
+{key_expression : value_expression for item in iterable}
+
+
+
+key_expression-	What will become the dictionary key
+value_expression-	What will become the dictionary value
+for item in iterable-	Loop to generate items
+if condition (optional)	Filtering condition
+
+ex-1  Without Dictionary Comprehension
+square_dict = {}
+for i in range(1, 6):
+    square_dict[i] = i * i
+
+print(square_dict)
+
+o/p
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+
+ex-2  With Dictionary Comprehension
+square_dict = {i: i*i for i in range(1, 6)}
+print(square_dict)
+
+o/p
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+
+
+ex-3 With Condition (Filtering)
+even_square = {i: i*i for i in range(1, 11) if i % 2 == 0}
+print(even_square)
+
+o/p
+{2: 4, 4: 16, 6: 36, 8: 64, 10: 100}
+
+ex-4
+words = ["apple", "banana", "mango"]
+
+length_dict = {word: len(word) for word in words}
+print(length_dict)
+
+o/p
+{'apple': 5, 'banana': 6, 'mango': 5}
+
+
+ex-5  Swapping Keys and Values
+original = {"a": 1, "b": 2, "c": 3}
+
+swapped = {value: key for key, value in original.items()}
+print(swapped)
+
+o/p
+{1: 'a', 2: 'b', 3: 'c'}
+
+Important: Values must be unique when swapping, otherwise data will be lost.
+
+ex-6
+numbers = [1, 2, 3, 4, 5]
+
+result = {x: "Even" if x % 2 == 0 else "Odd" for x in numbers}
+print(result)
+
+o/p
+{1: 'Odd', 2: 'Even', 3: 'Odd', 4: 'Even', 5: 'Odd'}
+
+
+
+ex-7
+keys = ["name", "age", "city"]
+values = ["Ajay", 25, "Bhopal"]
+
+my_dict = {keys[i]: values[i] for i in range(len(keys))}
+print(my_dict)
+
+o/p
+{'name': 'Ajay', 'age': 25, 'city': 'Bhopal'}
+
+
+
+ex-8  Count frequency of characters
+text = "programming"
+
+freq = {char: text.count(char) for char in text}
+print(freq)
+
+
+
+=>What is a Nested Dictionary?=>
+================================
+
+A nested dictionary is a dictionary inside another dictionary.
+
+👉 In simple words:
+One dictionary acts as the value of another dictionary.
+
+{
+    key1: {
+        inner_key1: value1,
+        inner_key2: value2
+    },
+    key2: {
+        inner_key1: value1,
+        inner_key2: value2
+    }
+}
+
+
+ex-
+students = {
+    101: {"name": "Ajay", "age": 25},
+    102: {"name": "Rahul", "age": 23},
+    103: {"name": "Priya", "age": 24}
+}
+
+Here:
+
+Outer dictionary → student ID
+
+Inner dictionary → student details
+
+
+ex-2
+students = {
+    101: {"name": "Ajay", "age": 25},
+    102: {"name": "Rahul", "age": 23},
+    103: {"name": "Priya", "age": 24}
+}
+
+print(students[101])
+
+print(students[101]["name"])
+
+o/p
+{'name': 'Ajay', 'age': 25}
+Ajay
+
+
+ex-3  Modify Nested Dictionary
+students = {
+    101: {"name": "Ajay", "age": 25},
+    102: {"name": "Rahul", "age": 23},
+    103: {"name": "Priya", "age": 24}
+}
+
+print(students[101])
+students[101]["age"] = 26
+print(students[101])
+
+o/p
+{'name': 'Ajay', 'age': 25}
+{'name': 'Ajay', 'age': 26}
+
+Add New Field:--
+--------------
+ex-1
+students = {
+    101: {"name": "Ajay", "age": 25},
+    102: {"name": "Rahul", "age": 23},
+    103: {"name": "Priya", "age": 24}
+}
+
+print(students[101])
+students[101]["city"] = "Bhopal"
+print(students[101])
+o/p
+{'name': 'Ajay', 'age': 25}
+{'name': 'Ajay', 'age': 25, 'city': 'Bhopal'}
+
+
+Add New Student:--
+----------------
+ex
+students = {
+    101: {"name": "Ajay", "age": 25},
+    102: {"name": "Rahul", "age": 23},
+    103: {"name": "Priya", "age": 24}
+}
+
+print(students)
+students[104] = {"name": "Karan", "age": 22}
+print(students)
+
+o/p
+{101: {'name': 'Ajay', 'age': 25}, 102: {'name': 'Rahul', 'age': 23}, 103: {'name': 'Priya', 'age': 24}}
+{101: {'name': 'Ajay', 'age': 25}, 102: {'name': 'Rahul', 'age': 23}, 103: {'name': 'Priya', 'age': 24}, 104: {'name': 'Karan', 'age': 22}}
+
+
+
+
+ex--Loop With Inner Dictionary
+students = {
+    101: {"name": "Ajay", "age": 25},
+    102: {"name": "Rahul", "age": 23},
+    103: {"name": "Priya", "age": 24}
+}
+
+for student_id, details in students.items():
+    print("ID:", student_id)
+    for key, value in details.items():
+        print(key, ":", value)
+
+o/p
+ID: 101
+name : Ajay
+age : 25
+ID: 102
+name : Rahul
+age : 23
+ID: 103
+name : Priya
+age : 24
+
+
+ex-2
+college = {
+    "CSE": {
+        "HOD": "Dr. Sharma",
+        "students": 120
+    },
+    "IT": {
+        "HOD": "Dr. Verma",
+        "students": 90
+    }
+}
+
+print(college["CSE"]["HOD"])
+
+o/p
+Dr. Sharma
+
+
+ex-3
+company = {
+    "emp1": {
+        "name": "Ajay",
+        "skills": ["Python", "Django", "SQL"]
+    }
+}
+print(company["emp1"]["skills"][0])
+
+o/p
+Python
+
+Deleting Data:--
+---------------
+ex-1
+students = {
+    101: {"name": "Ajay", "age": 25},
+    102: {"name": "Rahul", "age": 23},
+    103: {"name": "Priya", "age": 24}
+}
+del students[101]["age"]
+print(students[101])
+
+o/p
+{'name': 'Ajay'}
+
+ex-2  Delete Entire Entry
+students = {
+    101: {"name": "Ajay", "age": 25},
+    102: {"name": "Rahul", "age": 23},
+    103: {"name": "Priya", "age": 24}
+}
+del students[101]
+print(students)
+
+
+Where Nested Dictionaries Are Used:--
+--------------------------------------
+
+
+1.APIs return data in JSON format, which becomes a nested dictionary in Python.
+
+Example API-like data:
+
+response = {
+    "user": {
+        "id": 101,
+        "profile": {
+            "name": "Ajay",
+            "email": "ajay@gmail.com"
+        }
+    }
+}
+
+Used in:
+
+REST APIs
+
+Web applications
+
+Backend development
+
+Microservices
+
+2.Database-Like Structures (In-Memory Data Storage)
+
+Instead of a real database, sometimes we store structured data in nested dictionaries.
+
+students = {
+    101: {"name": "Ajay", "marks": 85},
+    102: {"name": "Rahul", "marks": 90}
+}
+
+3️⃣ Configuration Management
+
+Many configuration systems store settings in nested format.
+
+
+
+How Dictionary Works Internally?=>
+=======================================
+
+Python dictionary is implemented using a Hash Table.
+
+👉 It does NOT store values sequentially like list.
+👉 It stores data based on hash of the key.
+
+🧠 What Happens When You Do This?
+d = {"name": "Ajay"}
+
+Step-by-step internally:
+
+Python takes key "name"
+
+It calculates its hash value
+
+That hash determines memory location
+
+Value "Ajay" is stored at that location
+
+So dictionary lookup is:
+
+key → hash(key) → memory index → value
+
+
+That is why dictionary access is O(1) on average.
+
+
+Why Keys Must Be Immutable?==>
+=================================
+
+Now very important logic.
+
+Dictionary uses:
+
+hash(key)
+
+
+If key changes → hash changes → memory location changes.
+
+That will break dictionary.
+
+
+ex-1
+d = {}
+key = [1, 2, 3]
+d[key] = "Hello"
+
+o/p
+TypeError: unhashable type: 'list'
+
+
+Why List Cannot Be Key?
+
+List is:
+
+Mutable
+
+Changeable
+
+Unhashable
+
+
+Why Tuple CAN Be Key?
+
+Tuple is:
+
+Immutable
+
+Hashable (if all elements inside are immutable)
+
+NOTE:--Important Rule
+
+A tuple is hashable ONLY IF all elements inside are immutable.
+
+
+common problems:----
+==================
+
+ex-1
+
+Scenario: Website Login Attempt Counter
+🧠 Scenario:
+
+Track how many times each user tries to login.
+
+logins = ["Ajay", "Ravi", "Ajay", "Aman", "Ajay", "Ravi"]
+
+counter = {}
+
+for user in logins:
+    counter[user] = counter.get(user, 0) + 1
+
+print(counter)
+
+o/p
+{'Ajay': 3, 'Ravi': 2, 'Aman': 1}
+
+
+expl:--For every user in logins:
+
+counter.get(user, 0)
+→ If user already exists, get current count
+→ If not, return 0-- so here 0 is default value
+
++ 1
+→ Increase count by 1
+
+Store it back in dictionary
+
+
+ex-2 Group Words by Length
+Group words based on their length.
+
+words = ["cat", "dog", "lion", "tiger", "ant"]
+
+grouped = {}
+
+for word in words:
+    length = len(word)                  # Step 1: Find length of current word
+    if length not in grouped:           # Step 2: Check if this length is already a key
+        grouped[length] = []            # If not, create a new list for this length
+    grouped[length].append(word)        # Step 3: Add word to the list for this length
+
+print(grouped)
+
+o/p
+{3: ['cat', 'dog', 'ant'], 4: ['lion'], 5: ['tiger']}
+
+
+Step-by-Step Execution
+
+Word = "cat" → length = 3
+3 not in grouped → create grouped[3] = []
+Add "cat" → grouped = {3: ['cat']}
+
+Word = "dog" → length = 3
+3 exists → append "dog" → grouped = {3: ['cat', 'dog']}
+
+Word = "lion" → length = 4
+4 not in grouped → create grouped[4] = []
+Add "lion" → grouped = {3: ['cat', 'dog'], 4: ['lion']}
+
+Word = "tiger" → length = 5
+5 not in grouped → create grouped[5] = []
+Add "tiger" → grouped = {3: ['cat', 'dog'], 4: ['lion'], 5: ['tiger']}
+
+Word = "ant" → length = 3
+3 exists → append "ant" → grouped = {3: ['cat', 'dog', 'ant'], 4: ['lion'], 5: ['tiger']}
+
+
+ex-3
+
+
+Detect Duplicate Elements
+
+nums = [1, 2, 3, 1, 4, 5]
+
+seen = {}
+
+for num in nums:
+    if num in seen:
+        print(True)
+        break
+    seen[num] = True
+else:
+    print(False)
+
+print(seen)
+
+o/p
+True
+{1: True, 2: True, 3: True}
+
+
+ex-4
+Merge Two Dictionaries and Sum Values
+store1 = {'apple': 10, 'banana': 5, 'orange': 8}
+store2 = {'banana': 7, 'orange': 2, 'grapes': 4}
+
+# Solution
+merged = store1.copy()  # start with first dict
+for key, value in store2.items():
+    merged[key] = merged.get(key, 0) + value
+
+print(merged)
+
+o/p
+{'apple': 10, 'banana': 12, 'orange': 10, 'grapes': 4}
+
+explain--
+
+Iteration 1: key = "banana", value = 7
+merged.get("banana", 0)  # returns 5
+merged["banana"] = 5 + 7  # update value
+
+
+merged now:
+
+{'apple': 10, 'banana': 12, 'orange': 8}
+
+Iteration 2: key = "orange", value = 2
+merged.get("orange", 0)  # returns 8
+merged["orange"] = 8 + 2
+
+
+merged now:
+
+{'apple': 10, 'banana': 12, 'orange': 10}
+
+Iteration 3: key = "grapes", value = 4
+merged.get("grapes", 0)  # returns 0 (not in merged yet)
+merged["grapes"] = 0 + 4
+
+
+merged now:
+
+{'apple': 10, 'banana': 12, 'orange': 10, 'grapes': 4}
+
+another way:---
+
+
+ex-
+from collections import Counter
+store1 = {'apple': 10, 'banana': 5, 'orange': 8}
+store2 = {'banana': 7, 'orange': 2, 'grapes': 4}
+merged = Counter(store1) + Counter(store2)
+print(merged)
+
+o/p
+Counter({'banana': 12, 'apple': 10, 'orange': 10, 'grapes': 4})
+
+
+exp:--
+
+from collections import Counter
+Counter is a special dictionary subclass in Python, used for counting hashable objects.
+
+Every key stores a count (integer) as its value.
+
+Supports arithmetic operations like addition, subtraction, intersection, and union on counts.
+
+
+Convert Dictionaries to Counter
+Counter(store1)
+Counter(store2)
+
+
+Counter(store1) → Counter({'apple': 10, 'banana': 5, 'orange': 8})
+
+Counter(store2) → Counter({'banana': 7, 'orange': 2, 'grapes': 4})
+
+Why convert?
+Because Counter supports addition of counts. Regular dictionaries do not support +.

@@ -1,0 +1,869 @@
+Python Tuples:-
+=======
+A tuple in python is similar to a list, very similar to brothers but the difference is that we cannot change the elements of a tuple once it is assigned whereas we can change/edit the elements of a list.
+
+in short, a tuple is an immutable list. A tuple cannot be changed in any way once it is created.
+
+Core Characteristics —
+
+· Ordered — order matters just like the list. means 1,2,3 != 3,2,1
+
+· Unchangeable — Once created, you cannot change it, it is immutable.
+
+· Allows duplicate — we can put multiple duplicate values, there is no restriction.
+
+->Creating Tuple:--
+==============
+
+ex-1
+t=(1,2,3)
+print(t)
+
+o/p
+(1, 2, 3)
+
+ex-2  Without Parentheses
+t = 1, 2, 3
+print(t)
+
+Note:--Python automatically creates tuple.
+
+ex-3 empty tuple
+t =()
+print(t)
+
+o/p
+()
+
+ex-4 Method 3 – Using tuple() Constructor
+t = tuple([1, 2, 3])
+print(t)
+print(type(t))
+o/p
+(1, 2, 3)
+<class 'tuple'>
+
+ex-5 Single Element Tuple (Important)
+t = (10)
+print(t)
+print(type(t))
+o/p
+10
+<class 'int'>
+NOte:--Comma is mandatory.
+
+Without comma:
+
+t = (10)   # Integer, not tuple
+
+so correct way is:-
+
+ex-6
+t = (10,)
+print(t)
+print(type(t))
+o/p
+(10,)
+<class 'tuple'>
+
+Accessing Tuple Elements:-
+========================
+
+ex-1
+t = (10, 20, 30)
+
+print(t[0])    # 10
+print(t[-1])   # 30
+
+o/p
+10
+30
+
+ex-2
+t = (10, 20, 30, 40)
+
+print(t[1:3])
+
+o/p
+(20, 30)
+
+Tuple Immutability:--
+ex-1
+t = (10, 20, 30)
+
+t[1] = 50
+
+o/p
+error
+TypeError: 'tuple' object does not support item assignment
+
+
+Important Concept:-
+-------------------
+
+Tuple itself is immutable, but if it contains mutable object, that object can change.
+
+ex-1
+t = ([1, 2], 3)
+
+t[0].append(4)
+
+print(t)
+
+o/p
+([1, 2, 4], 3)
+
+Tuple Packing & Unpacking:---
+======================
+
+packing:--
+ex-1
+t = 10, 20, 30
+
+print(t)
+
+o/p
+(10, 20, 30)
+
+Unpacking:--
+========
+a, b, c = (10, 20, 30)
+
+print(a)
+print(b)
+print(c)
+
+o/p
+10
+20
+30
+
+Extended Unpacking:--
+a, *b = (1, 2, 3, 4)
+
+print(a)   # 1
+print(b)   # [2, 3, 4]
+
+o/p
+1
+[2, 3, 4]
+
+
+
+
+ex-2
+a, *b, c = (1,2,3,4,5)
+
+print(a)
+print(b)
+print(c)
+
+o/p
+1
+[2, 3, 4]
+5
+=>Tuple Methods=>
+================
+
+
+1.count()
+
+Counts occurrences of element.
+
+ex-
+t = (1, 2, 2, 3)
+
+print(t.count(2))
+o/p
+2
+
+2.index()
+
+Returns position of element.
+
+ex-1
+t = (10, 20, 30)
+
+print(t.index(20))
+
+o/p
+1
+
+
+ex-3
+t = (10, 20, 30, 40)
+
+print(len(t))
+print(max(t))
+print(min(t))
+print(sum(t))
+
+o/p
+4
+40
+10
+100
+
+Iterating Tuple:--
+==============
+
+ex-1
+t = (10, 20, 30)
+
+for i in t:
+    print(i)
+o/p
+10
+20
+30
+
+Using Index:-
+ex-
+t = (10, 20, 30)
+for i in range(len(t)):
+    print(t[i])
+o/p
+10
+20
+30
+
+
+Tuple Concatenation:--
+ex-
+t1 = (1, 2)
+t2 = (3, 4)
+
+print(t1 + t2)
+o/p
+(1, 2, 3, 4)
+
+Tuple Repetition:--
+----------------
+
+ex-
+t = (1, 2)
+
+print(t * 3)
+o/p
+(1, 2, 1, 2, 1, 2)
+
+
+Nested Tuple:--
+===========
+
+ex-
+t = ((1, 2), (3, 4))
+
+print(t[0])
+print(t[1][1])
+o/p
+(1, 2)
+4
+
+
+
+common examples:--
+1. Employee Record System
+ex-1
+emp_id = int(input("Enter Employee ID: "))
+name = input("Enter Employee Name: ")
+dept = input("Enter Department: ")
+salary = float(input("Enter Salary: "))
+
+employee = (emp_id, name, dept, salary)
+
+print("\nEmployee Details")
+print("Employee ID:", employee[0])
+print("Name:", employee[1])
+print("Department:", employee[2])
+print("Salary:", employee[3])
+
+o/p
+Enter Employee ID: 101
+Enter Employee Name: dipu
+Enter Department: cs
+Enter Salary: 2000
+
+Employee Details
+Employee ID: 101
+Name: dipu
+Department: cs
+Salary: 2000.0
+
+ex-2
+2. Product Billing System
+
+👉 Tuple used because bill data should not change
+
+ex-
+pname = input("Enter Product Name: ")
+price = float(input("Enter Product Price: "))
+qty = int(input("Enter Quantity: "))
+
+bill = (pname, price, qty)
+
+total = bill[1] * bill[2]
+
+print("\nBill Details")
+print("Product:", bill[0])
+print("Total Amount:", total)
+o/p
+Enter Product Name: laptop
+Enter Product Price: 200
+Enter Quantity: 5
+
+Bill Details
+Product: laptop
+Total Amount: 1000.0
+
+ex-3
+Login Credentials Storage
+username = input("Enter Username: ")
+password = input("Enter Password: ")
+
+credentials = (username, password)
+
+print("Stored Successfully")
+print(credentials)
+o/p
+Enter Username: ajha
+Enter Password: 123
+Stored Successfully
+('ajha', '123')
+
+
+Tuple Membership Testing:--
+==========================
+Used to check whether element exists or not.
+ex-1
+t = (10, 20, 30)
+
+print(20 in t)
+print(50 not in t)
+
+o/p
+True
+True
+
+Tuple Comparison:-
+===============
+Python compares tuples element by element.
+
+ex-1
+t1 = (1, 2, 3)
+t2 = (1, 2, 4)
+
+print(t1 < t2)
+o/p
+True
+
+ex-2
+t1 = (1, 2, 8)
+t2 = (1, 2, 4)
+
+print(t1 < t2)
+o/p
+false
+
+Tuple Deletion:--
+=============
+You cannot delete elements individually but you can delete entire tuple.
+
+ex-
+t = (10, 20, 30)
+
+del t
+print(t)
+
+o/p
+error
+          ^
+NameError: name 't' is not defined
+
+Converting Tuple ↔ List:--
+========================
+
+ex-1
+t = (1, 2, 3)
+
+l = list(t)
+
+print(l)
+o/p
+[1, 2, 3]
+
+List → Tuple
+
+ex-2
+l = [4, 5, 6]
+
+t = tuple(l)
+
+print(t)
+o/p
+(4, 5, 6)
+
+sorted:--
+t = (5, 2, 8, 1)
+
+print(sorted(t))
+o/p
+[1, 2, 5, 8]
+
+any() & all():--
+--------------
+ex-1
+t = (1, 2, 3)
+print(all(t))
+
+t = (0, 1, 2)
+print(any(t))
+o/p
+True
+True
+
+
+Memory Allocation in Tuples:--
+=============================
+Tuples, unlike lists are immutable, meaning their contents cannot be changed once they are created. 
+This immutability provides certain optimizations in terms of memory management.
+
+Fixed Size: Once a tuple is created, its size is fixed which means no resizing is required.
+Lower Memory Overhead: Since tuples are immutable, Python can allocate memory more efficiently.
+Memory Efficiency: Tuples are more memory efficient when dealing with a large amount of data that doesn't 
+require modification. The reduced overhead makes tuples faster in terms of memory access and iteration.
+
+
+NOTE:--
+check diagram in images notes..
+->Memory allocated for the tuple corresponds exactly to its size (4 elements). 
+No extra memory is allocated for future growth because tuples are immutable.
+
+->When a new element ('now') is added, a new tuple (Tnew) is created in memory. 
+This tuple contains all the elements from the old tuple (T1) plus the new element. The original tuple (T1) remains unchanged.
+This process demonstrates that tuples require new memory allocation whenever their size changes.
+
+ex-
+import sys
+a = ('Learn', 'Python', 'with', 'GFG')
+
+# Checking memory usage of the tuple
+print("Memory size of tuple:", sys.getsizeof(a)) 
+
+o/p
+Memory size of tuple: 72
+
+Explanation
+----------
+
+Tuple stores only references to objects, not the objects themselves.
+Your tuple: ('Learn', 'Python', 'with', 'GFG') → 4 elements → 4 pointers.
+
+Memory = tuple overhead + pointers
+
+Tuple overhead (object header) ≈ 48 bytes
+
+4 pointers × 6 bytes (optimized for small tuples in your Python version) ≈ 24 bytes
+
+Total = 48 + 24 = 72 bytes
+
+sys.getsizeof() returns the shallow size (tuple container only), not the memory of the strings inside.
+
+
+example with list
+import sys
+
+# Creating a list with same elements
+a = ['Learn', 'Python', 'with', 'GFG']
+
+# Checking memory usage of the list
+print("Memory size of list:", sys.getsizeof(a))
+
+o/p
+Memory size of list: 88
+
+Why list memory is bigger (88 bytes)-
+-------------------
+
+Lists are mutable
+
+Python allocates extra memory for lists to allow dynamic resizing (appending elements).
+
+This extra space is called overallocation buffer.
+
+
+
+=>differences between list and tuple in Python:=
+============================================
+1. Mutability:
+List: Lists are mutable,
+Tuple: Tuples are immutable,
+
+2.Immutability Advantages:-
+Memory efficient: Since tuples are immutable, Python can optimize memory allocation. They consume less memory than lists.
+
+Faster: Tuple operations are generally faster than list operations because no dynamic resizing is needed.
+
+Hashable: Tuples (if all elements are immutable) can be used as dictionary keys or set elements, unlike lists.
+
+3.Methods Available:-
+List: Has many built-in methods like append(), extend(), insert(), pop(), remove(), clear(), reverse(), sort().
+
+Tuple: Very limited methods: 
+
+Reason: Because tuple is immutable, it cannot modify itself, so no need for modification methods.
+
+4.Use Cases:-
+List:
+
+Used when you need dynamic, changeable data.
+
+Examples: shopping cart, task list, dynamic records.
+
+Tuple:
+
+Used when data is fixed or constant.
+
+Examples: coordinates (x, y), RGB color (255, 0, 0), database record, function multiple return values.
+
+5. Performance and Memory
+===========================
+List:
+
+Mutable → Python allocates extra memory for dynamic growth (overallocation).
+
+Slightly slower than tuples.
+
+Tuple:
+
+Immutable → exact memory allocation, smaller and faster.
+
+6.
+Iteration and Access
+
+Both support indexing, slicing, and iteration.
+
+Accessing elements is the same for lists and tuples:
+
+7.Nesting
+
+Both lists and tuples can be nested, i.e., contain other lists/tuples as elements.
+
+Important: The tuple itself is immutable, but if it contains a mutable object (like a list), that object can still be modified.
+
+8.
+ Packing and Unpacking
+
+Both support packing and unpacking.
+
+# Tuple
+t = 1, 2, 3
+a, b, c = t
+
+# List
+l = [1, 2, 3]
+x, y, z = l
+
+
+You can also do extended unpacking with both:
+
+a, *b, c = (1,2,3,4,5)
+
+9.
+Function Return Values
+
+Functions in Python return tuples by default when multiple values are returned:
+
+def calc(a,b):
+    return a+b, a-b  # returns a tuple
+
+res = calc(5,2)
+print(res)  # (7, 3)
+
+10.
+ Hashability
+
+Tuple: Can be hashable if all elements are immutable → can be dictionary keys.
+
+List: Not hashable → cannot be dictionary keys or set elements.
+
+
+11.
+Copying Behavior
+
+List: Can be copied by reference or using .copy() to create a new object.
+
+Tuple: Copying just creates a reference, since it is immutable, there’s no difference between original and copy.
+
+NamedTuple:=
+==========	
+A Named Tuple is a special type of tuple in Python that allows you to access elements using names instead of index positions.
+
+Normally in a tuple, you access data using index numbers. But in named tuples, each element has a field name, which makes the code more readable, structured, and meaningful.
+
+Named tuples are defined in Python using the collections module.
+->Normal tuples create confusion when data contains multiple fields.
+
+How to Create Named Tuple:--
+------------------------------
+syntax:--
+from collections import namedtuple
+TupleName = namedtuple("TupleName", ["field1", "field2", "field3"])
+
+ex-1
+from collections import namedtuple
+
+Student = namedtuple("Student", ["name", "age", "city"])
+
+s1 = Student("Ajay", 25, "Bhopal")
+
+print(s1.name)
+print(s1.age)
+print(s1.city)
+
+o/p
+Ajay
+25
+Bhopal
+
+detail:--
+from collections import namedtuple-->
+
+Python has a module called collections that provides special data structures.
+👉 namedtuple is one of them.
+
+📌 Purpose of namedtuple
+
+It creates tuple-like objects.
+
+But elements can be accessed using names instead of index numbers.
+
+Makes code more readable and structured.
+
+->
+Student = namedtuple("Student", ["name", "age", "city"]):--
+Here you are creating a new data type called Student.
+
+Think of it like creating a small class without writing full class code.
+
+->
+["name", "age", "city"]
+
+These are field names (like attributes).
+So Student object will contain:
+
+name
+
+age
+
+city
+
+s1 = Student("Ajay", 25, "Bhopal")
+👉 Here you are creating one Student object called s1.
+
+Values are assigned like this:
+
+Since it is a namedtuple, you can access values using dot notation.
+
+📌 s1.name → Ajay
+📌 s1.age → 25
+📌 s1.city → Bhopal
+
+
+
+ex-2
+---------
+from collections import namedtuple
+
+Account = namedtuple("Account", ["acc_no", "holder_name", "balance"])
+
+acc_no = int(input("Enter Account Number: "))
+name = input("Enter Account Holder Name: ")
+balance = float(input("Enter Balance: "))
+
+acc = Account(acc_no, name, balance)
+
+print("\nAccount Details")
+print("Account Number:", acc.acc_no)
+print("Holder Name:", acc.holder_name)
+print("Balance:", acc.balance)
+
+
+o/p
+Enter Account Number: 1211
+Enter Account Holder Name: akk
+Enter Balance: 340000
+
+Account Details
+Account Number: 1211
+Holder Name: akk
+Balance: 340000.0
+
+
+
+ex-3
+------
+from collections import namedtuple
+
+Student = namedtuple("Student", ["roll", "name", "marks"])
+
+n = int(input("Enter number of students: "))
+students = []
+
+for i in range(n):
+    print(f"\nEnter details for student {i+1}")
+    roll = int(input("Roll Number: "))
+    name = input("Name: ")
+    marks = float(input("Marks: "))
+
+    students.append(Student(roll, name, marks))
+
+print("\nStudent Records")
+for s in students:
+    print(s)
+
+
+o/p
+Enter number of students: 2
+
+Enter details for student 1
+Roll Number: 11
+Name: aaa
+Marks: 23
+
+Enter details for student 2
+Roll Number: 123
+Name: weee
+Marks: 35
+
+Student Records
+Student(roll=11, name='aaa', marks=23.0)
+Student(roll=123, name='weee', marks=35.0)
+
+
+Important Characteristics:=>
+================================
+
+1. Immutable
+2.Access Data in Multiple Ways
+   ->By Name
+   ->By Index
+3. More Readable Code
+
+=>When Should You Use Named Tuple?
+====================================
+Use named tuples when:
+
+✔ Data is fixed
+✔ You need lightweight objects
+✔ Need faster performance
+✔ Want readable code
+✔ Data should not change
+
+
+Special Methods of Named Tuple:--
+=================================
+
+1._fields:-
+==============
+Returns field names.
+
+
+ex-1
+-----
+from collections import namedtuple
+
+Student = namedtuple("Student", ["name", "age", "city"])
+
+s1 = Student("Ajay", 25, "Bhopal")
+
+print(Student._fields)
+
+o/p
+('name', 'age', 'city')
+
+
+2._asdict()
+============
+Converts named tuple into dictionary.
+
+print(stu1._asdict())
+
+ex-
+from collections import namedtuple
+
+Student = namedtuple("Student", ["name", "age", "city"])
+
+s1 = Student("Ajay", 25, "Bhopal")
+
+print(s1._asdict())
+
+o/p
+{'name': 'Ajay', 'age': 25, 'city': 'Bhopal'}
+
+
+3._replace():-
+==============
+Creates a new object with updated value.
+
+ex-
+from collections import namedtuple
+
+Student = namedtuple("Student", ["name", "age", "city"])
+
+s1 = Student("Ajay", 25, "Bhopal")
+
+print(s1)
+
+s2 = s1._replace(age=26)  # change age
+print("After replacing age:", s2)
+
+o/p
+Student(name='Ajay', age=25, city='Bhopal')
+After replacing age: Student(name='Ajay', age=26, city='Bhopal')
+
+
+4._make():--
+===========
+
+_make() is a class method available in namedtuple.
+
+Purpose: Create a namedtuple instance from an iterable (like list, tuple, etc.) instead of passing individual values.
+
+Think of it as a shortcut to convert a list/tuple into a namedtuple object.
+
+
+ex-1
+from collections import namedtuple
+
+# Create namedtuple class
+Student = namedtuple("Student", ["name", "age", "city"])
+
+# Data in a list
+data = ["Ajay", 25, "Bhopal"]
+
+# Create namedtuple object using _make()
+s1 = Student._make(data)
+
+# Access fields
+print(s1.name)  # Ajay
+print(s1.age)   # 25
+print(s1.city)  # Bhopal
+
+o/p
+Ajay
+25
+Bhopal
+
+NOte:
+Number of elements in iterable must match the number of fields in the namedtuple.
+
+
+ex-2:-- Example with Tuple
+from collections import namedtuple
+
+# Create namedtuple class
+Student = namedtuple("Student", ["name", "age", "city"])
+info = ("Ravi", 22, "Delhi")
+s2 = Student._make(info)
+print(s2)
