@@ -1,0 +1,143 @@
+PYTHON DICTIONARY PROGRAMMING QUESTIONS
+=======================================
+
+Instructions
+------------
+1. Try to solve each question before checking any reference material.
+2. Use Python dictionaries wherever appropriate.
+3. For intermediate questions, consider edge cases and time complexity.
+4. Unless a question says otherwise, do not use external libraries.
+
+PART A: SIMPLE QUESTIONS
+------------------------
+
+1. Create a dictionary named student with the keys name, age, and marks.
+   Print the dictionary.
+
+2. Given a dictionary of student details, print each key and value on a
+   separate line.
+
+3. Check whether the key "age" exists in a dictionary.
+
+4. Add a new key-value pair named "city" to an existing dictionary.
+
+5. Update the value associated with the key "marks".
+
+6. Remove a key from a dictionary using pop(). Handle the case where the
+   key does not exist.
+
+7. Find the number of key-value pairs in a dictionary without using len().
+
+8. Calculate the sum of all numeric values in a dictionary.
+
+9. Find the key associated with the largest value in a dictionary.
+
+10. Merge two dictionaries. If a key exists in both dictionaries, use the
+    value from the second dictionary.
+
+11. Create a dictionary from two lists: one list contains keys and the
+    other contains values. Do not use zip().
+
+12. Print all keys, all values, and all key-value pairs of a dictionary.
+
+13. Check whether a dictionary is empty.
+
+14. Copy a dictionary into another dictionary. Explain whether changing a
+    nested object in the copy can affect the original.
+
+15. Create a dictionary in which numbers from 1 to 5 are keys and their
+    squares are values.
+
+
+PART B: INTERMEDIATE QUESTIONS
+------------------------------
+
+16. Count the frequency of each character in a string.
+    Example: "hello" -> {'h': 1, 'e': 1, 'l': 2, 'o': 1}
+
+17. Count the frequency of each number in a list.
+    Example: [1, 2, 2, 3, 1, 2] -> {1: 2, 2: 3, 3: 1}
+
+18. Find the first non-repeating character in a string using a dictionary.
+
+19. Find all duplicate elements in a list and their frequencies.
+
+20. Reverse a dictionary so that values become keys and keys become values.
+    Assume all values are unique.
+
+21. Combine two dictionaries by adding the values of common keys.
+    Example: {'a': 10, 'b': 20} and {'b': 5, 'c': 7}
+    Expected: {'a': 10, 'b': 25, 'c': 7}
+
+22. Find the common keys between two dictionaries.
+
+23. Sort a dictionary by its values in ascending order.
+
+24. Group a list of words according to their length.
+    Example: ["cat", "apple", "dog", "mango"]
+    Expected groups: 3 -> ["cat", "dog"], 5 -> ["apple", "mango"]
+
+25. Given a nested dictionary of students and their subject marks, calculate
+    each student's total marks and find the topper.
+
+26. Find the second-largest distinct value in a dictionary.
+
+27. Group words that are anagrams of one another.
+    Example: ["eat", "tea", "bat", "ate"]
+    Expected groups: ["eat", "tea", "ate"] and ["bat"]
+
+28. Create a new dictionary containing only entries whose values are greater
+    than or equal to a given threshold. Do not modify the dictionary while
+    iterating over it.
+
+29. Given two dictionaries, return the keys whose values are equal in both.
+
+30. Safely retrieve a value from a deeply nested dictionary. If any key is
+    missing, return a default value such as "Unknown".
+
+
+PART C: OUTPUT-BASED PRACTICE
+-----------------------------
+
+31. Predict the output:
+
+    data = {"a": 10, "b": 20}
+    data["c"] = 30
+    data["a"] = 99
+    print(data)
+
+32. Predict the output:
+
+    data = {"x": 1, "y": 2}
+    print(data.get("z"))
+    print(data.get("z", 0))
+
+33. What happens when this code runs?
+
+    data = {"name": "Amit"}
+    print(data["age"])
+
+34. Predict the output:
+
+    data = {"a": 1, "b": 2}
+    copy_data = data
+    copy_data["a"] = 100
+    print(data)
+
+35. Predict the output:
+
+    data = {"a": 1, "b": 2}
+    data.update({"b": 5, "c": 3})
+    print(data)
+
+
+CHALLENGE RULES
+---------------
+
+- For Questions 16, 17, and 19, first solve using a normal loop and dictionary.
+- For Questions 21 and 24, try using get() or setdefault().
+- For Questions 25 and 30, practise nested dictionary access.
+- For Questions 26 and 27, test your solution with duplicate values and
+  empty or very small inputs.
+- Be prepared to explain the average-case time complexity of dictionary
+  lookup, insertion, and deletion.
