@@ -1,0 +1,54 @@
+Python String Programming Questions
+Level 1: Simple Questions
+1. Write a program to reverse a string without using slicing ([::-1]).
+2. Check whether a string is a palindrome.
+3. Count the number of vowels and consonants in a string.
+4. Count uppercase letters, lowercase letters, digits, and special characters.
+5. Count the number of words in a sentence.
+6. Find the length of a string without using len().
+7. Convert lowercase characters to uppercase without using upper().
+  s = "inDor434e"  => "INDOR434E"
+8. Remove all spaces from a string.
+9. Find the first and last character of a string.
+10. Replace every space with a hyphen (-).
+11. Count how many times a particular character occurs.
+12. Check whether two strings are equal without using == for the complete strings.
+13. Print each character of a string on a separate line.
+14. Remove all digits from a string.
+15. Find the ASCII/Unicode value of each character using ord().
+Level 2: Intermediate Questions
+16. Check whether two strings are anagrams.
+Example: "listen" and "silent" → True
+17. Find the first non-repeating character in a string.
+Example: "aabbcddee" → c
+18. Find the first repeating character.
+Example: "programming" → r
+19. Count the frequency of every character using a dictionary.
+Example: "hello" → {'h': 1, 'e': 1, 'l': 2, 'o': 1}
+20. Remove duplicate characters while preserving their original order.
+Example: "programming" → "progamin"
+21. Find the most frequent character in a string.
+22. Find the second most frequent character.
+23. Reverse the order of words in a sentence.
+Example: "Python is easy" → "easy is Python"
+24. Reverse every word without changing the word order.
+Example: "Python is easy" → "nohtyP si ysae"
+25. Check whether a string contains only digits without using isdigit().
+26. Find the longest word in a sentence.
+27. Find all duplicate characters and their frequencies.
+28. Check whether one string is a rotation of another.
+Example: "abcd" and "cdab" → True
+29. Remove a particular character from a string without using replace().
+30. Find the longest common prefix among a list of strings.
+Example: ["flower", "flow", "flight"] → "fl"
+Level 3: Challenging Interview Questions
+31. Find the longest substring without repeating characters.
+Example: "abcabcbb" → 3 ("abc")
+32. Find the longest palindromic substring.
+Example: "babad" → "bab" or "aba"
+33. Check whether a string has balanced parentheses.[Stack]
+Example: "{[()]}" → True, "([)]" → False
+34. Compress a string by counting consecutive repeated characters.
+Example: "aaabbccccd" → "a3b2c4d1"
+35. Expand a compressed string.
+Example: "a3b2c4" → "aaabbcccc"
