@@ -1,0 +1,7 @@
+Parameter :-
+1. Positional
+2. Keyword
+3. Variable length positional argument
+4. default
+5. variable length kyword argument
+6. Positional Only
