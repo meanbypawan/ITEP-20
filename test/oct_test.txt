@@ -1,0 +1,57 @@
+Q1. If-Else — Number Classification (5 Marks)
+
+Write a program that accepts an integer and checks whether it is a Harshad number.
+
+A number is a Harshad number if it is divisible by the sum of its digits.
+
+Example:
+
+Input: 18
+
+Output: Harshad Number (18 is divisible by 1 + 8 = 9)
+
+Q2. Loops — Prime Numbers (5 Marks)
+
+Write a program to print all prime numbers between 1 and 100. Do not use any built-in prime-checking function.
+
+Expected output: 2, 3, 5, 7, 11, ... 97
+
+Q3. Lists — Second-Largest Distinct Element (5 Marks)
+
+Given a list of integers, find the second-largest distinct element without using sort(), sorted(), or max().
+
+numbers = [12, 45, 7, 45, 30, 22, 30]
+
+Expected output: 30
+
+Q4. Sets — Common and Unique Elements (5 Marks)
+
+Given two lists, find:
+
+Elements common to both lists.
+
+Elements that appear in either list but not in both.
+
+list1 = [10, 20, 30, 40, 50]
+list2 = [30, 40, 60, 70]
+
+Expected output:
+
+Common elements: {30, 40}
+Unique elements: {10, 20, 50, 60, 70}
+
+Q5. Dictionaries — Word Frequency (5 Marks)
+
+Write a program to count the frequency of each word in a sentence using a dictionary. Treat uppercase and lowercase words as the same.
+
+sentence = "Python is easy and Python is powerful"
+
+Expected output:
+
+{
+    'python': 2,
+    'is': 2,
+    'easy': 1,
+    'and': 1,
+    'powerful': 1
+}
