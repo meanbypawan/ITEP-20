@@ -1,0 +1,2162 @@
+Python is neither purely call by value nor purely call by reference. Python uses a mechanism commonly called Call by Object Reference, Call by Sharing, or Pass by Assignment.
+Let's understand this with examples, especially if you are familiar with Java.
+1. First, understand the three concepts
+- Call by Value: A function receives a copy of the value. Reassigning the parameter does not change the caller's variable.
+- Call by Reference: A function receives access to the caller's variable itself, so it can change what that variable refers to.
+- Call by Object Sharing (Python): A function parameter refers to the same object as the argument. Mutating a mutable object can affect the caller's object, but reassigning the parameter does not reassign the caller's variable.
+
+
+
+What is a Function in Python?:--
+--------------------------------
+A function in Python is a block of reusable code that performs a specific task.
+
+You can call the function whenever needed instead of writing the same code repeatedly.
+
+
+
+
+Syntax for defining a function:
+
+
+We can define a function in Python, using the def keyword. A function might take input in the form of parameters.
+
+The syntax to declare a function is:
+def function_name(parameters):
+   
+    # body of function
+    return value  # optional
+
+
+2. Advantages of Functions in Python;->
+=====================================
+Code Reusability – Write once, use multiple times.
+
+Modularity – Break complex programs into smaller, manageable pieces.
+
+Readability – Makes code organized and easy to read.
+
+Maintainability – Easier to update or fix bugs in one place.
+
+Avoid Redundancy – Reduces repeated code.
+
+Better Collaboration – Multiple developers can work on different functions simultaneously.
+
+Testing & Debugging – Easier to test small parts (functions) individually.
+
+
+=> Types of Functions in Python=>
+===============================
+
+A. Built-in Functions:--
+-----------------------
+Built-in functions are functions that are already defined in Python and available for use without importing any module.
+These functions help perform common tasks quickly without writing extra code.
+
+They are always available in Python.
+
+They are optimized and reliable because they are part of Python's core.
+
+Python itself is written in C (CPython is the standard implementation).
+
+Most built-in functions like len(), abs(), max(), min() are not Python code but C functions exposed to Python.
+
+That’s why they are much faster than a Python-implemented equivalent.
+
+Characteristics of Built-in Functions:-
+--------------------------------------
+
+->No need to import any module.
+->Reusable anywhere in the program.
+
+->Can accept parameters and return values.
+
+->Python has around 70+ built-in functions (depends on version).
+
+->Help improve code readability and efficiency.
+
+
+ex-
+int()
+float()
+list()
+etc
+
+
+B. User-defined Functions:------
+=============================
+
+A user-defined function is a function that you, the programmer, create to perform a specific task.
+
+Unlike built-in functions (len(), print()), these functions are custom.
+
+Helps avoid code repetition and improves readability.
+
+NOTE:  
+After creating a function in Python we can call it by using the name of the functions followed by parenthesis 
+containing parameters of that particular function.
+
+
+ex-1
+def hello():
+    print("hello guyssss")
+
+hello()
+
+
+ex-2
+
+
+
+hello()
+def hello():
+    print("hello guyssss")
+
+o/p
+error
+
+NameError: name 'hello' is not defined.
+
+NOTE:--In Python, you must define a function before you call it.
+
+ex-3
+
+
+def sum():
+    a=10
+    b=20
+    c=a+b
+    print("sum is",c)
+
+sum()
+
+o/p
+sum is 30
+
+Parameters in Python?=>
+=======================
+
+A parameter is a variable listed inside the parentheses when defining a function.
+
+👉 It acts as a placeholder to receive values.
+
+ex-1
+
+def sum(a,b):
+    c=a+b
+    print("sum is",c)
+
+sum(100,200)
+
+o/p
+sum is 300
+
+ex-2
+
+
+def hello(name):
+    print("hello",name)
+
+hello("ajay")
+
+
+o/p
+hello ajay
+
+=>Types of Parameters in Python=>>>>
+================================
+
+Python has 5 main types of parameters:
+
+1.Positional Arguments
+
+2.Keyword Arguments
+
+3.Default Parameters
+
+4.Variable-Length Arguments (*args)
+
+5.Keyword Variable-Length Arguments (**kwargs)
+
+
+1.Positional Arguments:---
+======================
+Arguments are assigned based on their position.
+
+ex-1
+
+
+def hello(name,age):
+    print("Name is",name,"and age is",age)
+
+hello("deepika",30)
+
+
+o/p
+Name is deepika and age is 30
+
+
+ex-2
+
+def hello(name,age):
+    print("Name is",name,"and age is",age)
+
+hello("deepika")
+
+
+o/p
+TypeError: hello() missing 1 required positional argument: 'age'
+
+
+What is return?==>
+----------------
+
+The return statement in Python is used inside a function to:
+
+Send a value back to the caller
+
+Stop the execution of the function immediately
+
+👉 In simple words:
+return gives the result of a function back to wherever the function was called.
+
+ex-1
+
+
+def sum(a,b):
+    c=a+b
+    return c;
+
+print(sum(10,20))
+
+
+o/p
+30
+
+ex-2
+
+
+def sum(a,b):
+    c=a+b
+    
+
+print(sum(10,20))
+
+
+o/p
+None
+
+Note:--Why?
+
+Because the function did not return anything.
+So Python automatically returns:None
+
+==>Important: return Ends the Function:--
+
+Once Python sees return, the function stops immediately.
+
+ex-1
+def test():
+    print("Start")
+    return
+    print("End")
+
+test()
+
+o/p
+Start
+
+Returning Multiple Values:--
+-----------------------------
+
+Python allows returning multiple values.
+
+ex-2
+def calculate(a, b):
+    return a + b, a - b
+
+result = calculate(10, 5)
+print(result)
+
+o/p
+(15, 5)
+
+->It returns a tuple automatically.
+
+You can unpack:
+
+ex-3
+def calculate(a, b):
+    return a + b, a - b
+
+sum,diff = calculate(10, 5)
+print("sum is ",sum)
+print("diff is ",diff)
+
+o/p
+sum is  15
+diff is  5
+
+NOTE:-- A function can return any type:
+
+ex-4-- returning list
+def even_numbers(n):
+    evens = []
+    for i in range(1, n+1):
+        if i % 2 == 0:
+            evens.append(i)
+    return evens
+
+print(even_numbers(10))
+
+o/p
+[2, 4, 6, 8, 10]
+
+
+2.Keyword Arguments=>
+====================
+
+Keyword arguments are arguments passed to a function by explicitly specifying the parameter name along with its value.
+
+Instead of relying on position, you assign values using:
+
+function(parameter_name=value)
+
+
+So Python matches arguments using the name, not the position.
+
+ex-1
+def hello(name,age):
+    print("name is ",name)
+    print("age is ",age)
+
+hello(age=30,name="deepika")
+    
+
+o/p
+name is  deepika
+age is  30
+
+NOTE:
+Here:
+
+name="Ajay" directly assigns value to name
+
+age=25 directly assigns value to age
+
+Order does not matter.
+
+NOTE:
+Difference Between Positional and Keyword Arguments
+🔹 Positional
+greet("Ajay", 25)
+
+
+Based on order
+
+Order must match
+
+🔹 Keyword
+greet(age=25, name="Ajay")
+
+
+Based on name
+
+Order doesn't matter
+
+
+=>
+Mixing Positional and Keyword Arguments
+------------------------------------------
+You can mix them, but:
+
+👉 Positional arguments must come first
+👉 Keyword arguments must come after
+ex-1
+def hello(name,age):
+    print("name is ",name)
+    print("age is ",age)
+
+hello("deepika",age=30)
+    
+o/p
+name is  deepika
+age is  30
+
+ex-2
+def hello(name,age):
+    print("name is ",name)
+    print("age is ",age)
+
+hello(age=30,"deepika")
+    
+o/p
+SyntaxError: positional argument follows keyword argument
+
+
+3️.Default Parameters=>
+====================
+What Are Default Parameters?
+
+Default parameters are function parameters that have a predefined value.
+
+If the caller does not provide a value for that parameter, Python uses the default value.
+
+Basic Syntax:
+def function_name(parameter=value):
+
+ex-1
+def hello(name,age=18):
+    print("name is ",name)
+    print("age is ",age)
+
+hello("deepika")
+    
+o/p
+name is  deepika
+age is  18
+
+ex-2
+def hello(name,age=18):
+    print("name is ",name)
+    print("age is ",age)
+
+hello("deepika",35)
+    
+
+o/p
+name is  deepika
+age is  35
+
+Now:
+
+Default value is ignored
+
+Passed value (35) is used
+
+ex-3
+
+def register_user(name, age=18, country="India"):
+    print(name, age, country)
+
+register_user("Ravi")
+
+o/p
+Ravi 18 India
+
+ex-4  Multiple Default Parameters
+def register_user(name, age=18, country="India"):
+    print(name, age, country)
+register_user("Ravi", country="USA")
+
+o/p
+Ravi 18 USA
+
+Important Rule (Very Important)
+❗ Non-default parameters must come before default parameters.
+
+ex-1
+def register_user( age=18, country="India",name):
+    print(name, age, country)
+
+error
+
+
+
+4.Variable-Length Arguments in Python — *args (Detailed)
+1
+=>What is *args?
+
+*args allows a function to accept any number of positional arguments.
+
+Basic Syntax=>
+
+def function_name(*args):
+    print(args)
+
+
+*args collects all extra positional arguments into a tuple.
+
+ex-1
+def show_numbers(*args):
+    print(args)
+
+show_numbers(1, 2, 3, 4)
+
+o/p
+(1, 2, 3, 4)
+
+ex-2 any name is possible--args is just a convention — you can use anything:
+def show_numbers(*a):
+    print(a)
+
+show_numbers(1, 2, 3, 4)
+o/p
+(1, 2, 3, 4)
+
+ex-3  Sum of Unlimited Numbers
+def add(*numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+print(add(1, 2))
+print(add(1, 2, 3, 4, 5))
+print(add(10, 20, 30, 40, 50, 60))
+o/p
+3
+15
+210
+
+=>
+*args with Normal Parameters=>
+
+Normal parameters come first, then *args.
+
+ex-1
+def student(name, *marks):
+    print("Name:", name)
+    print("Marks:", marks)
+
+student("Ajay", 80, 75, 90, 85)
+
+o/p
+Name: Ajay
+Marks: (80, 75, 90, 85)
+
+ex-2  Find Average
+def average(*nums):
+    return sum(nums) / len(nums)
+
+print(average(10, 20, 30, 40))
+
+o/p
+25.0
+
+=>Passing List into *args (Unpacking):--
+ex-1
+numbers = [1, 2, 3, 4]
+
+def add(a, b, c, d):
+    return a + b + c + d
+
+print(add(*numbers))
+o/p
+10
+
+NOTE:*numbers → breaks list into positional arguments.
+
+ex-2  Shopping Cart Total
+def cart_total(*prices):
+    total = 0
+    for price in prices:
+        total += price
+    return total
+
+print(cart_total(299, 499, 199, 99))
+
+o/p
+1096
+
+ex-3
+Empty Case
+def test(*args):
+    print(args)
+
+test()
+
+o/p
+()
+
+ex-4
+def add(*nums):
+    return sum(nums)
+
+add([1,2,3]) 
+
+o/p
+ error
+TypeError: unsupported operand type(s) for +: 'int' and 'list'
+
+
+ex-5
+def add(*nums):
+    return sum(nums)
+
+print(add(*[1,2,3])) 
+
+o/p
+6
+
+
+5.Keyword Variable-Length Arguments (**kwargs):--
+
+What is **kwargs?
+
+**kwargs allows a function to accept any number of keyword arguments (named arguments).
+
+Instead of receiving values by position (*args), it receives them by name and stores them in a dictionary.
+
+👉 kwargs = keyword arguments
+
+ex-1
+def show_details(**kwargs):
+    print(kwargs)
+
+show_details(name="Ajay", age=25, city="Bhopal")
+
+o/p
+{'name': 'Ajay', 'age': 25, 'city': 'Bhopal'}
+
+Accessing Individual Values:--
+---------------------------
+----------------------------
+ex-1
+def show_details(**kwargs):
+    for key, value in kwargs.items():
+        print(key, ":", value)
+
+show_details(name="Ajay", age=25, course="Python")
+
+o/p
+name : Ajay
+age : 25
+course : Python
+
+
+ex-2
+def student(name, **details):
+    print("Name:", name)
+    print("Other Details:", details)
+
+student("Ajay", age=22, marks=85, city="Indore")
+
+o/p
+Name: Ajay
+Other Details: {'age': 22, 'marks': 85, 'city': 'Indore'}
+
+
+NOTE:Correct Order of Parameters (Important Rule)
+1. Normal parameters
+2. *args
+3. **kwargs
+
+
+
+ex-1
+def create_profile(**info):
+    if "name" in info:
+        print("Welcome", info["name"])
+    if "email" in info:
+        print("Email:", info["email"])
+    if "age" in info:
+        print("Age:", info["age"])
+
+create_profile(name="Ravi", email="ravi@gmail.com", age=24)
+
+o/p
+Welcome Ravi
+Email: ravi@gmail.com
+Age: 24
+
+NOTE:Flexible — user can pass any fields.
+
+ex-2
+
+data = {"name": "Ajay", "age": 25, "city": "Delhi"}
+
+def show(**kwargs):
+    print(kwargs)
+
+show(**data)
+
+o/p
+{'name': 'Ajay', 'age': 25, 'city': 'Delhi'}
+
+=>Difference Between *args and **kwargs=>
+==========================================
+
+| Feature      | `*args`              | `**kwargs`        |
+| ------------ | -------------------- | ----------------- |
+| Accepts      | Positional arguments | Keyword arguments |
+| Data type    | Tuple                | Dictionary        |
+| Example call | func(1,2,3)          | func(a=1,b=2,c=3) |
+-----------------------------------------------------------
+
+
+ex-3
+def bill(**items):
+    total = 0
+    for item, price in items.items():
+        total += price
+    return total
+
+print(bill(shirt=500, jeans=1200, shoes=2000))
+
+o/p
+3700
+
+ex-4
+def test(**kwargs):
+    print(kwargs)
+
+test()
+
+o/p
+{}
+
+
+
+
+
+=>Positional-Only Parameters (/) in Python=>
+  -----------------------------------------
+1. What are Positional-Only Parameters?
+
+Normally in Python, a function parameter can be passed in two ways:
+
+1) Positional argument
+2) Keyword argument
+
+
+Example:
+
+def greet(name, age):
+    print(name, age)
+
+greet("Ajay", 21)        # positional
+greet(name="Ajay", age=21)  # keyword
+
+
+But sometimes we DON’T want users to pass arguments using keywords.
+
+We want:
+
+Allowed → greet("Ajay", 21)
+Not allowed → greet(name="Ajay", age=21)
+
+
+👉 For this Python introduced positional-only parameters using /
+
+2. Syntax
+def function_name(param1, param2, /):
+    pass
+
+
+Anything written before / becomes:
+
+🔒 Positional-Only Parameter (cannot be used with keyword)
+
+3. Basic Example
+
+def add(a, b, /):
+    return a + b
+
+print(add(10, 20))        # ✅ allowed
+print(add(a=10, b=20)) ---------error
+
+TypeError: add() got some positional-only arguments passed as keyword arguments: 'a, b'
+
+
+
+=>
+Keyword-Only Parameters (* separator)
+
+Introduced so that some parameters must be written with their name while calling the function.
+
+1. What are Keyword-Only Parameters?
+
+
+
+Syntax
+def function_name(param1, *, param2):
+    pass
+
+Anything after * becomes:
+
+🔒 Keyword-Only Parameter (must use parameter name)
+
+
+ex-1
+def greet(name, *, city):
+    print(name, city)
+
+greet("Ajay", city="Bhopal")  # ✅ allowed
+greet("Ajay", "Bhopal")       # ❌ ERROR
+
+o/p
+TypeError: takes 1 positional argument but 2 were given
+
+
+ex-2
+def order(item, quantity, *, price, discount):
+    print(item, quantity, price, discount)
+
+order("Pen", 5, price=10, discount=2)  # ✅
+#order("Pen", 5, 10, 2)  # error  
+
+o/p
+Pen 5 10 2
+
+
+
+ex-3
+def payment(id, name, /, amount, method, *, currency, tax):
+    print(id, name, amount, method, currency, tax)
+
+payment(101, "Ajay", 500, "UPI", currency="INR", tax=5)
+
+o/p
+101 Ajay 500 UPI INR 5
+
+
+ex-4
+
+def payment(id, name, /, amount, method, *, currency, tax):
+    print(id, name, amount, method, currency, tax)
+
+
+payment(id=101, name="Ajay", 500, "UPI", currency="INR", tax=5)
+
+ex-5
+def payment(id, name, /, amount, method, *, currency, tax):
+    print(id, name, amount, method, currency, tax)
+
+
+payment(id=101, name="Ajay", 500, "UPI", currency="INR", tax=5)
+
+o/p
+error
+
+========================================================
+Anonymous Functions in Python ( lambda functions )=>>>>>
+==================================================
+
+An Anonymous function means:
+
+A function without a name.
+
+In Python we create it using the lambda keyword instead of def.
+
+So instead of writing a full function, we write a short one-line function.
+
+
+Basic Syntax
+lambda arguments : expression
+
+
+lambda → keyword to create anonymous function
+
+arguments → inputs (like parameters)
+
+expression → single statement whose value is automatically returned
+
+Lambda always returns value (no return keyword needed)
+
+
+ex-1
+square = lambda x: x*x
+print(square(5))
+
+o/p
+25
+
+ex-2
+
+add = lambda a, b: a + b
+print(add(10, 20))
+
+o/p
+30
+
+
+ex-3
+Lambda with Conditional Logic
+
+(Only single expression allowed)
+
+max_num = lambda a, b: a if a>b else b
+print(max_num(10, 50))
+o/p
+50
+
+=>Lambda with map()->
+
+Apply function to every element
+
+
+ex-1without lambda
+
+
+
+def square_num(x):
+    return x * x
+
+nums = [1,2,3,4,5]
+
+square = list(map(square_num, nums))
+print(square)
+ex-1 with lambda
+nums = [1,2,3,4,5]
+
+square = list(map(lambda x: x*x, nums))
+print(square)
+
+o/p
+[1, 4, 9, 16, 25]
+
+==>Python map() Function Explained:--
+-----------------------------------
+map() is a built-in Python function that applies a given function to each item of an iterable 
+(like list, tuple, set) and returns a map object (which is an iterator).
+
+Syntax
+map(function, iterable1, iterable2, ...)
+
+ex-1
+names = ['ajay', 'ravi', 'sita']
+
+result = map(str.capitalize, names)  # built-in string function
+print(list(result))
+
+o/p
+['Ajay', 'Ravi', 'Sita']
+
+
+
+==>Lambda with filter()=>
+--------------------------
+Filter elements based on condition
+
+
+ex-1
+nums = [1,2,3,4,5,6,7,8]
+
+even = list(filter(lambda x: x%2==0, nums))
+print(even)
+
+o/p
+[2, 4, 6, 8]
+
+
+
+=>Lambda with reduce():--
+======================
+
+
+->What is reduce() in Python?
+
+reduce() is a function from the functools module that applies a function cumulatively to the items of a sequence (like a list)
+ from left to right, reducing it to a single value.
+
+
+
+syntax:--
+from functools import reduce
+reduce(function, iterable[, initializer])
+
+function – a function of two arguments (can be lambda).
+
+iterable – a sequence (list, tuple, etc.) whose elements will be reduced.
+
+initializer – (optional) a starting value for the accumulator.
+
+
+
+ex-1-- Example without lambda:
+
+from functools import reduce
+
+def add(x, y):
+    return x + y
+
+numbers = [1, 2, 3, 4, 5]
+result = reduce(add, numbers)
+print(result)
+
+o/p
+15
+
+working--
+Step 1: add(1,2) => 3
+Step 2: add(3,3) => 6
+Step 3: add(6,4) => 10
+Step 4: add(10,5) => 15
+
+->Using lambda with reduce()
+
+Instead of defining a separate function like add(), you can use a lambda directly:
+
+
+ex-
+
+from functools import reduce
+numbers = [1, 2, 3, 4, 5]
+result = reduce(lambda x, y: x + y, numbers)
+print(result) 
+
+o/p
+15
+
+working-
+lambda x, y: x + y replaces the function add.
+
+x stores the intermediate result, and y is the next element in the list.
+
+reduce() applies the lambda cumulatively across the list.
+
+
+ex-2 a) Product of all elements
+from functools import reduce
+
+numbers = [1, 2, 3, 4]
+product = reduce(lambda x, y: x * y, numbers)
+print(product)
+
+o/p
+24
+
+ex-3  Find maximum element
+
+from functools import reduce
+numbers = [5, 1, 9, 2, 8]
+max_value = reduce(lambda x, y: x if x > y else y, numbers)
+print(max_value)
+
+o/p
+9
+
+working-
+First step: x = 5, y = 1
+Current max = 5
+Second step: x = 5, y = 9
+Current max = 9
+Third step: x = 9, y = 2
+Current max = 9
+Fourth step: x = 9, y = 8
+Current max = 9
+
+ex-4  Concatenate strings
+
+from functools import reduce
+words = ["Python", "is", "fun"]
+sentence = reduce(lambda x, y: x + " " + y, words)
+print(sentence)
+
+o/p
+Python is fun
+
+ex-5  Sum with initializer
+from functools import reduce
+numbers = [1, 2, 3, 4]
+sum_with_init = reduce(lambda x, y: x + y, numbers, 10)
+print(sum_with_init)
+
+o/p
+20   # Output: 20  (10 + 1 + 2 + 3 + 4)
+
+
+=>Lambda in Sorting:---
+--------------------
+
+ Sorting in Python-
+--------------------
+
+Python provides two main ways to sort data:
+
+list.sort() → sorts the list in-place
+
+sorted() → returns a new sorted list
+
+Syntax:
+
+sorted(iterable, key=None, reverse=False)
+
+key → a function applied to each element for comparison
+
+reverse=True → sorts in descending order
+
+
+Using lambda in Sorting-->
+-----------------------
+
+A lambda function is often passed to the key argument to sort based on custom logic.
+
+
+ex-1
+numbers = [5, 2, 9, 1, 7]
+
+# Sort in ascending order
+asc = sorted(numbers)
+print(asc)  # Output: [1, 2, 5, 7, 9]
+
+# Sort in descending order
+desc = sorted(numbers, reverse=True)
+print(desc)  # Output: [9, 7, 5, 2, 1]
+
+# Using lambda (though not necessary here)
+asc_lambda = sorted(numbers, key=lambda x: x)
+print(asc_lambda)  # Output: [1, 2, 5, 7, 9]
+
+
+o/p
+[1, 2, 5, 7, 9]
+[9, 7, 5, 2, 1]
+[1, 2, 5, 7, 9]
+
+
+ex-2Sorting by length of strings
+
+words = ["Python", "is", "fun", "and", "powerful"]
+
+# Sort by length of each word
+sorted_words = sorted(words, key=lambda x: len(x))
+print(sorted_words)  
+
+o/p
+['is', 'fun', 'and', 'Python', 'powerful']
+
+Here, lambda x: len(x) tells Python to sort words based on their length.
+
+
+Example 3: Sorting a list of tuples
+students = [("Alice", 25), ("Bob", 20), ("Charlie", 23)]
+
+# Sort by age (second element in tuple)
+sorted_by_age = sorted(students, key=lambda student: student[1])
+print(sorted_by_age)
+# Output: [('Bob', 20), ('Charlie', 23), ('Alice', 25)]
+
+# Sort by name (first element in tuple)
+sorted_by_name = sorted(students, key=lambda student: student[0])
+print(sorted_by_name)
+
+o/p
+[('Bob', 20), ('Charlie', 23), ('Alice', 25)]
+[('Alice', 25), ('Bob', 20), ('Charlie', 23)]
+
+
+
+Example 4: Sorting dictionary items by value
+scores = {"Alice": 85, "Bob": 92, "Charlie": 78}
+
+# Sort by value
+sorted_scores = sorted(scores.items(), key=lambda item: item[1])
+print(sorted_scores)
+# Output: [('Charlie', 78), ('Alice', 85), ('Bob', 92)]
+
+# Sort by key (name)
+sorted_by_name = sorted(scores.items(), key=lambda item: item[0])
+print(sorted_by_name)
+# Output: [('Alice', 85), ('Bob', 92), ('Charlie', 78)]
+
+
+o/p
+[('Charlie', 78), ('Alice', 85), ('Bob', 92)]
+[('Alice', 85), ('Bob', 92), ('Charlie', 78)]
+
+
+ex-5
+words = ["banana", "Apple", "cherry", "apple"]
+
+# Case-insensitive sort
+sorted_words = sorted(words, key=lambda x: x.lower())
+print(sorted_words)
+
+o/p
+['Apple', 'apple', 'banana', 'cherry']
+
+ex-6
+products = [
+    {"name":"laptop","price":50000},
+    {"name":"mobile","price":20000},
+    {"name":"tablet","price":30000}
+]
+
+products.sort(key=lambda item: item["price"])
+print(products)
+
+o/p
+[{'name': 'mobile', 'price': 20000}, {'name': 'tablet', 'price': 30000}, {'name': 'laptop', 'price': 50000}]
+
+
+
+
+=>limitations of lamda Functions in Python:---
+===========================
+
+
+Lambda functions are designed for very small, temporary logic —
+so Python intentionally keeps them restricted.
+
+1️. Only One Expression Allowed
+
+Lambda can contain only a single expression (one line of logic).
+
+✔ Allowed
+
+lambda x: x*x
+
+
+❌ Not allowed
+
+lambda x:
+    y = x + 2
+    return y
+
+
+You cannot write:
+
+multiple statements
+
+multiple lines
+
+2️.No Assignments Inside Lambda
+
+You cannot assign variables inside a lambda.
+
+❌ Wrong
+
+lambda x: y = x + 2
+
+
+Because assignment (=) is a statement, not an expression.
+
+3️.No Loops or Complex Logic
+
+You cannot write loops like for, while.
+
+❌ Not allowed
+
+lambda x: 
+    for i in range(x):
+        print(i)
+
+
+Lambda is only for quick calculations.
+
+4️.No Statements (print, pass, raise, etc.)
+
+Lambda only supports expressions — not statements.
+
+❌ Not allowed
+
+lambda x: print(x)
+lambda x: raise Exception("error")
+
+
+(You can technically call print() in modern Python, but lambda should not be used for such logic — it's bad practice.)
+
+5️.Hard to Read for Complex Conditions
+
+Large lambda becomes unreadable:
+
+❌ Bad practice
+
+lambda x: x**2 if x>0 else -x if x<-10 else x+5 if x<100 else x/2
+
+Cannot Contain Multiple Returns
+
+Only one automatic return exists.
+
+Not Reusable (No Name / No Debugging)
+
+Cannot easily reuse
+
+Hard to debug in stack trace
+
+Bad for large programs
+
+===================
+
+=>Recursion:---
+=============
+
+
+Recursion is a programming technique in which a function calls itself to solve a problem.
+
+Instead of using loops (for, while), the function repeatedly breaks the problem into smaller sub-problems of the same type until 
+it reaches a stopping condition.
+
+
+->Every recursive function MUST have 2 parts:
+
+Base Case (Stopping Condition)
+Prevents infinite calling
+
+Recursive Case (Self Call)
+Function calls itself with smaller input
+
+
+syntax:--
+def function_name(parameters):
+
+    if base_condition:
+        return result
+
+    return function_name(smaller_input)
+If the base case is missing → ❌ Infinite recursion → Program crash (Stack Overflow)
+
+
+Example 1 — Factorial (Most Important Example)
+Mathematical Definition
+5! = 5 × 4 × 3 × 2 × 1
+0! = 1
+
+n! = n × (n-1)!
+
+ex-
+def factorial(n):
+
+    # Base Case
+    if n == 0 or n == 1:
+        return 1
+
+    # Recursive Call
+    return n * factorial(n-1)
+
+
+print(factorial(5))
+
+o/p
+120
+
+ex-2  Sum of Numbers
+
+sum(5) = 5 + 4 + 3 + 2 + 1
+
+
+
+def sum_n(n):
+    if n == 0:
+        return 0
+    return n + sum_n(n-1)
+
+print(sum_n(5))
+
+o/p
+15
+
+ex-3
+Fibonacci Series
+def fibonacci(n):
+
+    # Base Cases
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+
+    # Recursive Case
+    return fibonacci(n-1) + fibonacci(n-2)
+
+
+# Print 10 Fibonacci numbers
+for i in range(10):
+    print(fibonacci(i), end=" ")
+
+o/p
+0 1 1 2 3 5 8 13 21 34
+
+
+Step-by-Step Working (Example: fibonacci(5))
+fibonacci(5)
+= fibonacci(4) + fibonacci(3)
+
+fibonacci(4)
+= fibonacci(3) + fibonacci(2)
+
+fibonacci(3)
+= fibonacci(2) + fibonacci(1)
+
+fibonacci(2)
+= fibonacci(1) + fibonacci(0)
+
+Now base cases:
+fibonacci(1) = 1
+fibonacci(0) = 0
+Then values return back (Backtracking):
+
+fibonacci(2) = 1 + 0 = 1
+fibonacci(3) = 1 + 1 = 2
+fibonacci(4) = 2 + 1 = 3
+fibonacci(5) = 3 + 2 = 5
+🔎 Recursion Tree (for n=5)
+                fib(5)
+           /                \
+       fib(4)              fib(3)
+      /      \            /      \
+   fib(3)   fib(2)    fib(2)   fib(1)
+
+
+ex-4 Power of a Number
+2³ = 2 × 2 × 2
+
+def power(base, exp):
+    if exp == 0:
+        return 1
+    return base * power(base, exp-1)
+
+print(power(2, 3))
+
+o/p
+8
+
+ex-5 Count Digits in a Number
+
+def count_digits(n):
+    if n == 0:
+        return 0
+    return 1 + count_digits(n // 10)
+
+print(count_digits(12345))
+
+o/p
+5
+
+ex-6 Print Numbers from 1 to N
+def print_numbers(n):
+    if n == 0:
+        return
+    print_numbers(n-1)
+    print(n)
+
+print_numbers(5)
+
+o/p
+1
+2
+3
+4
+5
+
+=>Advantages of Recursion in Python=>
+====================================
+1.Simpler & Cleaner Code
+
+Recursive solutions often look shorter and more readable.
+
+Especially useful for problems that are naturally recursive like tree traversal.
+
+2.Best for Divide-and-Conquer Algorithms
+
+Algorithms like Merge Sort and Quick Sort are naturally implemented using recursion.
+
+3.
+Natural Fit for Tree & Graph Problems
+
+Tree traversals (Inorder, Preorder, Postorder) are easier using recursion.
+
+Example: Binary Tree
+
+Reduces Code Complexity in Some Problems
+
+4.Problems like factorial, Fibonacci, Tower of Hanoi are easier to express recursively.
+
+5.Mathematical Problem Representation
+
+If a problem is defined mathematically in recursive form, implementation becomes straightforward.
+
+
+
+=>Disadvantages of Recursion in Python=>
+======================================
+1.High Memory Usage (Stack Memory)
+
+  Each recursive call adds a new frame to the call stack.
+
+  More memory compared to loops.
+
+2.Stack Overflow Risk
+
+   Python has a recursion limit (default ~1000).
+
+   If recursion depth exceeds limit → RecursionError.
+
+3.Slower Execution
+
+   Function calls are expensive.
+
+   Recursive solutions are usually slower than iterative ones.
+
+4.Harder to Debug
+
+    Tracing multiple recursive calls can be confusing for beginners.
+
+5.Redundant Calculations
+
+    Classic example: Fibonacci sequence
+
+    Recursive Fibonacci without memoization recalculates same values multiple times → inefficient.
+
+
+=>Nested Functions (Function Inside Function) in Python=:
+=========================================================
+
+A nested function is a function defined inside another function.
+
+👉 In simple words:
+When we create a function within the body of another function, it is called a nested function or inner function.
+
+Example 1:
+def greet(name):
+    
+    def message():
+        return "Welcome to Python!"
+    
+    print("Hello", name)
+    print(message())
+
+greet("Ajay")
+
+o/p
+Hello Ajay
+Welcome to Python!
+
+NOTE:--
+greet() is the outer function
+
+message() is the inner function
+
+Inner function is called inside outer function
+
+Inner function cannot be called directly from outside
+
+ex-2
+def greet(name):
+    
+    def message():
+        return "Welcome to Python!"
+    
+    print("Hello", name)
+    print(message())
+
+message()
+
+o/p
+error
+NameError: name 'message' is not defined
+
+
+Example 2: Accessing Outer Function Variables
+
+
+def outer():
+    x = 10
+    
+    def inner():
+        print("Value of x is:", x)
+    
+    inner()
+
+outer()
+
+o/p
+Value of x is: 10
+
+NOTE:--
+Inner function can access outer function variables
+❌ But outer function cannot access inner function variables
+
+ex-3
+def outer():
+    x = 10
+    
+    def inner():
+        y=20
+        print("Value of x is:", x)
+    
+    inner()
+    print(y)
+
+outer()
+
+o/p
+error
+NameError: name 'y' is not defined
+
+
+ex-4
+def outer():
+    x = 10
+    
+    def inner():
+        x=100
+        print("Value of x is:", x)
+    
+    inner()
+    print("now value of x is in outer",x)
+
+outer()
+
+o/p
+Value of x is: 100
+now value of x is in outer 10
+
+NOTE:--
+you cannot modify outer variable inside inner function.
+
+=>What is nonlocal?
+==================
+
+In Python, nonlocal keyword is used inside a nested function to modify a variable that belongs to the enclosing (outer) function,
+ but not the global scope.
+
+👉 It tells Python:
+
+“Don’t create a new local variable — use the variable from the nearest outer function.”
+
+ex-5- nonlocal
+def outer():
+    x = 10
+    
+    def inner():
+        nonlocal x;
+        x=100
+        print("Value of x is:", x)
+    
+    inner()
+    print("now value of x is in outer",x)
+
+outer()
+o/p
+Value of x is: 100
+now value of x is in outer 100
+
+NOTE:--
+Why Do We Need nonlocal?
+
+Python follows LEGB rule for variable lookup:
+
+L → Local
+
+E → Enclosing
+
+G → Global
+
+B → Built-in
+
+By default:
+
+If you assign a value inside a function → Python treats it as local variable
+
+So it does NOT modify the outer function variable unless we use nonlocal
+
+
+Important Rules of nonlocal:--
+------------------------------
+
+It is used only inside nested functions.
+
+The variable must already exist in the enclosing function.
+
+It cannot refer to global variables.
+
+It works only with nearest enclosing scope.
+
+
+common examples:---
+1.
+def calculate_total(price, tax_rate):
+    
+    def calculate_tax():
+        return price * tax_rate
+    
+    return price + calculate_tax()
+
+print(calculate_total(1000, 0.18))
+
+o/p
+1180.0
+
+NOTE:--calculate_tax() is not needed outside.
+So we hide it inside calculate_total().
+
+
+2.
+def bill_generator(amount):
+
+    def apply_discount():
+        if amount > 10000:
+            return amount * 0.10
+        return 0
+
+    discount = apply_discount()
+    final_amount = amount - discount
+
+    return final_amount
+
+print(bill_generator(15000))
+
+
+o/p
+13500.0
+
+==>Advantages of Nested (Inner) Functions in Python:--
+------------------------------------------------------
+1️.Better Code Organization
+
+Functions that are only relevant inside another function can be grouped together.
+
+Keeps your code cleaner and easier to read.
+
+2️. Data Hiding / Encapsulation
+
+Inner functions are not accessible from outside the outer function.
+
+Protects internal logic from being misused.
+
+3.Access to Outer Function Variables
+
+Inner functions can use variables from the outer function without passing them as arguments.
+
+4.Supports Closures
+5.Used in Decorators
+6.Avoids Global Variables
+
+Inner functions reduce the need for globals.
+
+Variables remain local and safe, preventing accidental overwrites.
+
+7.Logical Grouping of Helper Functions
+
+If a function is only a helper for a specific task, nesting it makes the purpose clear.
+
+
+
+
+=>What is a Closure?=>
+=====================
+A closure is a function object that remembers values from its enclosing (outer) function scope, even after the outer function has finished execution.
+
+In simpler words:
+A closure “closes over” variables from the outer function so they stay accessible later.
+
+Key points:
+
+A closure is created when a nested function references a variable from the outer function.
+
+The outer function returns the inner function.
+
+The inner function can be called later, and it will remember the outer function’s variables.
+
+ex-1
+def greet(name):
+    message = f"Hello {name}!"
+    
+    def display_message():
+        print(message)  # inner function uses outer variable
+    
+    return display_message
+
+# Create closure
+greeting = greet("Ajay")
+
+# Call the inner function later
+greeting()
+
+
+o/p
+Hello Ajay!
+NOTE:--
+greet("Ajay") returns display_message function.
+
+Even though greet has finished executing, display_message still remembers message.
+
+
+ex-2  Closure with Modifiable Outer Variable using nonlocal
+def counter():
+    count = 0
+    
+    def increment():
+        nonlocal count
+        count += 1
+        return count
+    
+    return increment
+
+# Create closure
+c = counter()
+
+print(c())  # 1
+print(c())  # 2
+print(c())  # 3
+
+
+o/p
+1
+2
+3
+
+ex-3
+def make_multiplier(factor):
+    def multiply(x):
+        return x * factor
+    return multiply
+
+double = make_multiplier(2)
+triple = make_multiplier(3)
+
+print(double(5))  # 10
+print(triple(5))  # 15
+
+
+o/p
+10
+15
+
+NOTE:--
+Each call to make_multiplier creates a new closure with its own factor.
+
+double remembers factor=2, triple remembers factor=3.
+
+
+ex-4
+def greeting_maker(greeting, name):
+    def greet():
+        return f"{greeting}, {name}!"
+    return greet
+
+hello_ajay = greeting_maker("Hello", "Ajay")
+hi_ravi = greeting_maker("Hi", "Ravi")
+
+print(hello_ajay())  # Hello, Ajay!
+print(hi_ravi())     # Hi, Ravi!
+
+
+o/p
+Hello, Ajay!
+Hi, Ravi!
+
+=>advantages of closures in Python:
+==================================
+
+1.Data Encapsulation / Hiding
+
+Closures allow you to hide variables from the global scope.
+
+Only the inner function can access or modify the data.
+
+Helps prevent accidental changes to variables from outside.
+
+2.Retaining State Without Global Variables
+Closures remember values from the outer function even after it has finished execution.
+
+This allows persistent state across multiple function calls without using global variables.
+3.Function Factories / Dynamic Functions
+  Closures make it easy to create specialized functions on the fly.
+
+    Each closure can “remember” different parameters.
+
+4.Avoid Polluting Global Namespace
+
+Variables inside closures are local to the closure.
+
+This reduces namespace clutter and potential conflicts in large programs.
+
+5.Useful in Decorators
+6.More Modular & Readable Code
+Encapsulating logic inside closures can make code cleaner, shorter, and easier to maintain.
+
+
+
+=>What is a Decorator?
+
+A decorator in Python is a function that modifies the behavior of another function or method. 
+In simple terms, it “wraps” another function to add extra functionality without modifying the original function’s code.
+
+
+=> Basic Syntax
+
+A decorator is just a function that takes another function as an argument and returns a new function.
+
+Reduces repetitive code and separates concerns.
+
+
+ex-1
+def my_decorator(func):
+    def wrapper():
+        print("Before calling the function")
+        func()  # call the original function
+        print("After calling the function")
+    return wrapper
+
+def say_hello():
+    print("Hello!")
+
+# Applying decorator manually
+decorated_function = my_decorator(say_hello)
+decorated_function()
+
+o/p
+Before calling the function
+Hello!
+After calling the function
+
+
+ex-2
+def my_decorator(func):
+    def wrapper():
+        print("Before calling the function")
+        func()  # call the original function
+        print("After calling the function")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+
+say_hello()
+
+o/p
+Before calling the function
+Hello!
+After calling the function
+
+
+NOTE:--
+The @my_decorator is equivalent to:
+
+say_hello = my_decorator(say_hello)
+
+
+Here’s what happens internally:
+
+Python sees @my_decorator.
+
+It passes the original say_hello function as the argument func to my_decorator.
+
+my_decorator creates the wrapper function that calls say_hello() inside it.
+
+my_decorator returns wrapper, and now the name say_hello points to wrapper.
+
+So after decoration:
+
+say_hello  --> wrapper function (inside my_decorator)
+The original say_hello is now wrapped inside wrapper.
+
+->Calling the decorated function
+say_hello()
+
+
+Remember, say_hello now points to wrapper.
+
+So calling say_hello() actually executes the wrapper function:
+
+
+=>Types of Decorators in Python=>
+==================================
+
+Decorators in Python are mainly of three major types:
+
+1. Function Decorators=>
+----------------------
+These decorate functions.
+
+example---above examples are from function decorator
+
+
+2.
+2. Method Decorators (Inside Classes)
+These decorate methods inside a class.
+
+Python provides built-in method decorators:
+(a) @staticmethod
+(b) @classmethod
+(c) @property
+
+3. Class Decorators
+
+Decorators that decorate entire classes.
+
+NOTE- will cover above things in class.
+
+
+=>What are Type Hints?=>
+=======================
+
+What are Type Hints?
+
+Type hints (also called type annotations) are a way to specify the expected data type of function parameters, return values, and variables in Python.
+
+Python is dynamically typed, which means you normally don’t need to declare types. But type hints help:
+
+Make your code more readable
+
+Help tools like linters, IDEs, and static type checkers (like mypy) catch errors early
+
+Serve as documentation for other developers
+
+
+2. Syntax of Type Hints
+
+The basic syntax for function parameters:
+
+def function_name(param1: type1, param2: type2) -> return_type:
+    # function body
+    return something
+
+ex-1
+def add(a: int, b: int) -> int:
+    return a + b
+
+result = add(5, 10)
+print(result) 
+
+o/p
+15
+
+
+
+ex-2
+def add(a: int, b: int) -> int:
+    return a + b
+
+result = add("wel", "come")
+print(result) 
+
+o/p
+welcome
+
+Why Type Hints Don’t Prevent Errors-->
+---------------------------------------
+Type hints are not enforced by the Python interpreter; they are purely for static analysis by external tools like mypy. 
+So, even with type hints, the code will still run with errors unless a static type checker is used. Python won’t prevent
+ you from passing a string or floating-point number to the function at runtime.
+
+Using mypy for Type Checking-->
+To actually check if your code violates any type hints, you can use a tool like mypy, a static type checker for Python. 
+Running mypy on your script will not execute the code but will analyze it for type hint violations
+
+1. Install mypy: If you don't have mypy installed, you can install it using pip:
+
+pip install mypy
+
+>mypy demo9.py
+
+demo9.py:4: error: Argument 1 to "add" has incompatible type "str"; expected "int"  [arg-type]
+demo9.py:4: error: Argument 2 to "add" has incompatible type "str"; expected "int"  [arg-type]
+Found 2 errors in 1 file (checked 1 source file)
+
+NOTE:--
+pip is Python’s package manager. You use it to install external Python libraries.
+
+
+=>What is a Docstring?:==
+=========================
+Docstring (documentation string) is a special string literal used to document a function, class, or module in Python.
+
+It explains what the function/class/module does.
+
+Helps other programmers (and yourself) understand your code.
+
+Accessible at runtime via .__doc__.
+
+💡 Key Points:
+
+Enclosed in triple quotes: """ ... """ or ''' ... '''
+
+Placed immediately after the function definition line.
+
+
+Syntax of Function Docstrings
+def function_name(parameters):
+    """
+    This is a docstring.
+    Describe what the function does, its parameters, and return value.
+    """
+    # function body
+
+
+ex-1
+def add(a: int, b: int) -> int:
+    """
+    Add two numbers and return the result.
+    
+    Parameters:
+    a (int): First number
+    b (int): Second number
+    
+    Returns:
+    int: Sum of a and b
+    """
+    return a + b
+
+
+print(add.__doc__)
+
+o/p
+Add two numbers and return the result.
+
+Parameters:
+a (int): First number
+b (int): Second number
+
+Returns:
+int: Sum of a and b
+
+
+Advantages of Using Docstrings=>
+
+Code Readability – Helps understand function logic without reading the body.
+
+Documentation Tools – Tools like Sphinx, pydoc, or IDEs use docstrings to generate docs.
+
+Interactive Help – Built-in help() function uses docstrings:
+
+====================================================================
+
+=>=Higher Order Functions in Python=>
+========================================
+In Python, Higher Order Functions (HOFs) play an important role in functional programming and allow for writing more modular, reusable and readable code. A Higher-Order Function is a function that either:
+
+Takes another function as an argument
+Returns a function as a result
+
+ex-1
+def greet(func): # higher-order function 
+    return func("Hello")
+
+def uppercase(text): # function to be passed
+    return text.upper()
+
+print(greet(uppercase))
+
+o/p
+HELLO
+
+Explanation: greet(func) is a higher-order function as it takes another function as an argument. 
+uppercase(text) converts text to uppercase. Calling greet(uppercase) passes "Hello" to uppercase, resulting in "HELLO".
+
+
+Examples of Higher Order Functions:---
+
+
+Example 1 : Passing a functions as an arguments
+A function can be passed as an argument to another function, enabling dynamic behavior.
+
+
+def apply(func, x): # higher order function
+    return func(x)
+
+def square(n): # function to be passed
+    return n * n
+
+print(apply(square, 5))
+
+o/p
+25
+
+
+
+=>Built in Higher Order Functions in Python==>
+
+Python provides several built-in Higher Order Functions such as map(), filter() and sorted(), which simplify operations on iterable objects.
+
+=>Applications of Higher order functions:--
+
+
+They are widely used in functional programming, closures, decorators, and callbacks to improve code modularity, reusability and abstraction.
+
