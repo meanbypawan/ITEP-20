@@ -1,0 +1,164 @@
+Java OOP Exercises (using Setters)
+Employee Record System
+Create a class Employee with private fields: id, name, and salary.
+Use setter methods to assign values. Add a method to display employee details.
+
+Book Library
+Create a class Book with fields: title, author, and price.
+Use setters to assign values and a method to print book details.
+
+Bank Account
+Create a class BankAccount with fields: accountNumber, holderName, balance.
+Use setters to assign values. Add a method to display balance.
+
+Car Info Manager
+Create a class Car with fields: brand, model, and year.
+Use setters to assign values. Create a method to print full car info.
+
+Product Inventory
+Create a class Product with fields: productId, name, quantity, price.
+Use setters to assign values. Add a method to calculate total value (quantity * price).
+
+Movie Rating System
+Create a class Movie with fields: name, genre, and rating.
+Use setters and create a method isHit() that returns true if rating ≥ 8.0.
+
+Student Result Checker
+Create a class Student with fields: name, mathMarks, scienceMarks.
+Use setters to assign values. Add a method getAverage().
+
+Mobile Phone Store
+Create a class Mobile with fields: brand, model, price.
+Use setters to set values. Create a method to check if phone is affordable (price < 20000).
+
+Circle Geometry
+Create a class Circle with field radius.
+Use a setter to assign radius. Add methods to compute area and circumference.
+
+Rectangle Area Calculator
+Create a class Rectangle with fields: length, width.
+Use setters to assign values. Add a method to calculate area.
+=================================================================================
+Java OOP Exercises (using Setters)
+Employee Record System
+Create a class Employee with private fields: id, name, and salary.
+Use setter methods to assign values. Add a method to display employee details.
+
+Book Library
+Create a class Book with fields: title, author, and price.
+Use setters to assign values and a method to print book details.
+
+Bank Account
+Create a class BankAccount with fields: accountNumber, holderName, balance.
+Use setters to assign values. Add a method to display balance.
+
+Car Info Manager
+Create a class Car with fields: brand, model, and year.
+Use setters to assign values. Create a method to print full car info.
+
+Product Inventory
+Create a class Product with fields: productId, name, quantity, price.
+Use setters to assign values. Add a method to calculate total value (quantity * price).
+
+Movie Rating System
+Create a class Movie with fields: name, genre, and rating.
+Use setters and create a method isHit() that returns true if rating ≥ 8.0.
+
+Student Result Checker
+Create a class Student with fields: name, mathMarks, scienceMarks.
+Use setters to assign values. Add a method getAverage().
+
+Mobile Phone Store
+Create a class Mobile with fields: brand, model, price.
+Use setters to set values. Create a method to check if phone is affordable (price < 20000).
+
+Circle Geometry
+Create a class Circle with field radius.
+Use a setter to assign radius. Add methods to compute area and circumference.
+
+Rectangle Area Calculator
+Create a class Rectangle with fields: length, width.
+Use setters to assign values. Add a method to calculate area.
+=================================================================================
+Read once :-
+-------------
+Object-oriented programming: Object-oriented programming (OOP) is a programming paradigm based on the concept of "objects", which can contain data and code. The data is in the form of fields (often known as attributes or properties), and the code is in the form of procedures (often known as methods).
+
+A Java class file is a file (with the .class filename extension) containing Java bytecode that can be executed on the Java Virtual Machine (JVM). A Java class file is usually produced by a Java compiler from Java programming language source files (.java files) containing Java classes (alternatively, other JVM languages can also be used to create class files).
+If a source file has more than one class, each class is compiled into a separate class file.
+----------------------------------------------------------------------
+***** :- Add Two Time Class Object.
+
+1. Write a Java program to create a class called "Person" with a name and age attribute. Create two instances of the "Person" class, set their attributes using the constructor, and print their name and age.
+
+ 
+
+2. Write a Java program to create a class called "Dog" with a name and breed attribute. Create two instances of the "Dog" class, set their attributes using the constructor and modify the attributes using the setter methods and print the updated values.
+
+ 
+
+3. Write a Java program to create a class called "Rectangle" with width and height attributes. Calculate the area and perimeter of the rectangle.
+
+ 
+
+4. Write a Java program to create a class called "Circle" with a radius attribute. You can access and modify this attribute. Calculate the area and circumference of the circle.
+
+ 
+
+5. Write a Java program to create a class called "Book" with attributes for title, author, and ISBN, and methods to add and remove books from a collection.
+
+ 
+
+6. Write a Java program to create a class called "Employee" with a name, job title, and salary attributes, and methods to calculate and update salary.
+
+ 
+
+7. Write a Java program to create a class called "Bank" with a collection of accounts and methods to add and remove accounts, and to deposit and withdraw money. Also define a class called "Account" to maintain account details of a particular customer.
+
+ 
+
+8. Write a Java program to create class called "TrafficLight" with attributes for color and duration, and methods to change the color and check for red or green.
+
+ 
+
+9. Write a Java program to create a class called "Employee" with a name, salary, and hire date attributes, and a method to calculate years of service.
+
+ 
+
+10. Write a Java program to create a class called "Student" with a name, grade, and courses attributes, and methods to add and remove courses.
+
+ 
+
+11. Write a Java program to create a class called "Library" with a collection of books and methods to add and remove books.
+
+ 
+
+12. Write a Java program to create a class called "Airplane" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.
+
+ 
+
+13. Write a Java program to create a class called "Inventory" with a collection of products and methods to add and remove products, and to check for low inventory.
+
+ 
+
+14. Write a Java program to create a class called "School" with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.
+
+ 
+
+15. Write a Java program to create a class called "MusicLibrary" with a collection of songs and methods to add and remove songs, and to play a random song.
+
+ 
+
+16. Write a Java program to create a class called "Shape" with abstract methods for calculating area and perimeter, and subclasses for "Rectangle", "Circle", and "Triangle".
+
+ 
+
+17. Write a Java program to create a class called "Movie" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews.
+
+ 
+
+18. Write a Java program to create a class called "Restaurant" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.
+
+ 
+
+19. Write a Java program to create a class with methods to search for flights and hotels, and to book and cancel reservations.
