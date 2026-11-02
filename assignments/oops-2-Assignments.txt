@@ -1,0 +1,398 @@
+1. Employee Management System
+Problem
+
+Create an Employee class to manage employee details.
+
+Requirements
+
+Each employee should have:
+
+employee id
+name
+department
+salary
+Functionalities
+Display employee details
+Increase salary by percentage
+Count total employees created using a class variable
+
+Create employee object from a string:
+
+"101-Rahul-IT-50000"
+
+using a class method.
+
+Concepts Practiced
+constructor
+instance variables
+class variables
+class method
+instance methods
+2. Bank Account Simulation
+Problem
+
+Design a banking system using OOP.
+
+Requirements
+
+Each account should contain:
+
+account number
+holder name
+balance
+Functionalities
+Deposit money
+Withdraw money
+Prevent withdrawal if balance insufficient
+Display account summary
+Maintain bank-wide interest rate as class variable
+Add static method to validate minimum balance rule
+Concepts Practiced
+object state management
+static methods
+class variables
+validations
+3. Online Shopping Cart
+Problem
+
+Create a shopping cart system.
+
+Requirements
+
+A cart should:
+
+store customer name
+maintain list of products
+maintain total bill
+Functionalities
+Add product
+Remove product
+Calculate final amount
+Apply discount using static method
+Track total carts created
+Concepts Practiced
+list inside object
+object interaction
+static method
+class variable
+4. Student Grade System
+Problem
+
+Create a student result management system.
+
+Requirements
+
+Each student should have:
+
+roll number
+name
+marks in 3 subjects
+Functionalities
+Calculate total marks
+Calculate percentage
+Assign grade:
+A → 90+
+B → 75+
+C → 50+
+Fail otherwise
+Track total students
+Concepts Practiced
+instance methods
+conditional logic in classes
+object-based calculations
+5. Library Management System
+Problem
+
+Design a library system.
+
+Requirements
+
+Each book should contain:
+
+book id
+title
+author
+availability status
+Functionalities
+Issue book
+Return book
+Display availability
+Count total books using class variable
+Additional Challenge
+
+Prevent issuing already issued books.
+
+Concepts Practiced
+object state changes
+boolean flags
+class variables
+6. Movie Ticket Booking System
+Problem
+
+Create a movie booking system.
+
+Requirements
+
+Each movie should have:
+
+movie name
+total seats
+available seats
+Functionalities
+Book tickets
+Cancel tickets
+Prevent overbooking
+Display seat availability
+Concepts Practiced
+state updates
+validations
+object behavior
+7. Hospital Patient Record System
+Problem
+
+Create a patient management system.
+
+Requirements
+
+Each patient should contain:
+
+patient id
+name
+disease
+doctor assigned
+Functionalities
+Display patient details
+Change doctor
+Count total patients admitted
+Additional Task
+
+Create patient from formatted string using class method.
+
+8. Inventory Management System
+Problem
+
+Create product inventory software.
+
+Requirements
+
+Each product should contain:
+
+product id
+product name
+quantity
+price
+Functionalities
+Add stock
+Reduce stock after purchase
+Prevent negative stock
+Calculate inventory value
+Concepts Practiced
+arithmetic inside classes
+validations
+inventory logic
+9. ATM Machine Simulation
+Problem
+
+Design ATM software.
+
+Requirements
+
+Each account should have:
+
+account number
+PIN
+balance
+Functionalities
+Login verification
+Withdraw
+Deposit
+Change PIN
+Mini statement
+Additional Challenge
+
+Lock account after 3 wrong PIN attempts.
+
+Concepts Practiced
+encapsulation mindset
+validations
+object state
+10. Company Department System
+Problem
+
+Create:
+
+Department
+Employee
+
+classes.
+
+Requirements
+
+Each department:
+
+has department name
+stores employee objects
+Functionalities
+Add employee to department
+Display all employees
+Calculate total department salary
+Concepts Practiced
+object composition
+object interaction
+storing objects in lists
+11. E-Commerce Product System
+Problem
+
+Create product system for online store.
+
+Requirements
+
+Each product should have:
+
+product name
+price
+category
+Functionalities
+Apply GST using static method
+Apply category discount
+Display final price
+Concepts Practiced
+static methods
+calculations
+reusable logic
+12. Car Rental System
+Problem
+
+Create a car rental platform.
+
+Requirements
+
+Each car:
+
+car number
+model
+rental price per day
+availability
+Functionalities
+Rent car
+Return car
+Calculate rent amount
+Prevent renting unavailable cars
+13. Exam Portal
+Problem
+
+Create exam management system.
+
+Requirements
+
+Each exam object:
+
+exam name
+total marks
+passing marks
+Functionalities
+Check pass/fail
+Calculate grade
+Maintain total exams conducted
+14. Restaurant Billing System
+Problem
+
+Create restaurant order system.
+
+Requirements
+
+Each order:
+
+table number
+ordered items
+prices
+Functionalities
+Add items
+Remove items
+Calculate total bill
+Add service tax using static method
+15. Cricket Team Management
+Problem
+
+Create player management system.
+
+Requirements
+
+Each player:
+
+name
+role
+runs scored
+Functionalities
+Update runs
+Display statistics
+Maintain total players
+Additional Challenge
+
+Find highest scorer among all players.
+
+16. Train Reservation System
+Problem
+
+Design ticket reservation system.
+
+Requirements
+
+Train should contain:
+
+train number
+total seats
+booked seats
+Functionalities
+Reserve seat
+Cancel seat
+Display available seats
+17. Electricity Bill System
+Problem
+
+Generate electricity bill.
+
+Requirements
+
+Consumer should contain:
+
+consumer id
+units consumed
+Functionalities
+Calculate bill
+Add surcharge using static method
+Display bill summary
+18. School Classroom System
+Problem
+
+Create classroom system.
+
+Requirements
+
+Classroom should:
+
+maintain student objects
+maintain class teacher
+Functionalities
+Add student
+Remove student
+Display class strength
+Concepts Practiced
+object aggregation
+collections of objects
+19. Flight Reservation System
+Problem
+
+Create airline reservation software.
+
+Requirements
+
+Flight should contain:
+
+flight number
+total seats
+booked seats
+Functionalities
+Book ticket
+Cancel ticket
+Prevent overbooking
