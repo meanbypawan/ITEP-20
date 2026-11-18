@@ -1,0 +1,533 @@
+1. Animal Sound System
+
+Create parent class Animal and child classes:
+
+Dog
+Cat
+Cow
+
+Override sound() method.
+
+2. Vehicle System
+
+Create parent class Vehicle.
+
+Child classes:
+
+Car
+Bike
+Bus
+
+Add methods:
+
+start()
+stop()
+3. Employee Management
+
+Base class Employee.
+
+Derived:
+
+Developer
+Tester
+HR
+
+Calculate salaries differently.
+
+4. Student Management
+
+Base class Person.
+
+Derived:
+
+Student
+Teacher
+
+Add role-specific methods.
+
+5. Banking System
+
+Parent:
+
+BankAccount
+
+Child:
+
+SavingsAccount
+CurrentAccount
+
+Implement withdrawal rules.
+
+6. Hospital Management
+
+Parent:
+
+HospitalStaff
+
+Child:
+
+Doctor
+Nurse
+Receptionist
+
+Implement duties().
+
+7. Shopping Cart System
+
+Base:
+
+Product
+
+Derived:
+
+Electronics
+Grocery
+Clothing
+
+Apply discounts.
+
+8. Online Food Delivery
+
+Parent:
+
+FoodItem
+
+Derived:
+
+Pizza
+Burger
+Sandwich
+
+Calculate total bill.
+
+9. Library Management
+
+Parent:
+
+LibraryItem
+
+Derived:
+
+Book
+Magazine
+Newspaper
+
+Implement borrowing system.
+
+10. Movie Ticket Booking
+
+Parent:
+
+Ticket
+
+Derived:
+
+GoldTicket
+PlatinumTicket
+VIPTicket
+
+Apply pricing logic.
+
+PART 2 — Multilevel & Multiple Inheritance
+11. Company Hierarchy
+Person
+Employee(Person)
+Manager(Employee)
+
+Display company hierarchy.
+
+12. University System
+Person
+Student(Person)
+GraduateStudent(Student)
+
+Add thesis information.
+
+13. Smart Device System
+Device
+SmartDevice(Device)
+SmartTV(SmartDevice)
+
+Add WiFi support.
+
+14. Multiple Inheritance Example
+
+Classes:
+
+Father
+Mother
+Child(Father, Mother)
+
+Access methods from both.
+
+15. Sports Management
+Player
+CricketPlayer
+Captain(CricketPlayer)
+
+Add captain-specific functionality.
+
+16. E-commerce User Roles
+User
+Seller(User)
+PremiumSeller(Seller)
+
+Add premium benefits.
+
+17. Online Course Platform
+Course
+ProgrammingCourse
+PythonCourse
+
+Add certification system.
+
+18. Vehicle Insurance System
+Vehicle
+InsuredVehicle
+Car
+
+Calculate insurance amount.
+
+19. Mobile Phone Hierarchy
+Phone
+Smartphone
+AndroidPhone
+
+Add Android features.
+
+20. Gaming Characters
+Character
+Warrior
+SuperWarrior
+
+Add special powers.
+
+PART 3 — Abstract Class Exercises
+21. Shape Area Calculator
+
+Abstract class Shape.
+
+Derived:
+
+Circle
+Rectangle
+Triangle
+
+Implement area calculation.
+
+22. Payment Gateway
+
+Abstract class Payment.
+
+Derived:
+
+CreditCard
+UPI
+Wallet
+
+Implement payment processing.
+
+23. Notification System
+
+Abstract:
+
+Notification
+
+Derived:
+
+EmailNotification
+SMSNotification
+PushNotification
+24. ATM System
+
+Abstract:
+
+ATM
+
+Derived:
+
+SBIATM
+HDFCATM
+
+Implement banking operations.
+
+25. Ride Booking App
+
+Abstract:
+
+Ride
+
+Derived:
+
+BikeRide
+CabRide
+AutoRide
+
+Calculate fare.
+
+26. Media Player
+
+Abstract:
+
+MediaPlayer
+
+Derived:
+
+AudioPlayer
+VideoPlayer
+
+Implement play functionality.
+
+27. Transport Fare System
+
+Abstract:
+
+Transport
+
+Derived:
+
+Train
+Flight
+Bus
+
+Implement ticket pricing.
+
+28. Authentication System
+
+Abstract:
+
+Authentication
+
+Derived:
+
+OTPAuth
+GoogleAuth
+FacebookAuth
+29. Employee Attendance
+
+Abstract:
+
+Employee
+
+Derived:
+
+FullTimeEmployee
+PartTimeEmployee
+
+Calculate working hours.
+
+30. Restaurant Management
+
+Abstract:
+
+Restaurant
+
+Derived:
+
+PizzaRestaurant
+BurgerRestaurant
+
+Prepare food differently.
+
+PART 4 — Interface-Style Exercises
+31. Drawable Interface
+
+Interface:
+
+draw()
+
+Implement:
+
+Circle
+Rectangle
+Line
+32. Database Interface
+
+Methods:
+
+connect()
+disconnect()
+
+Implement:
+
+MySQL
+MongoDB
+PostgreSQL
+33. Smart Home Devices
+
+Methods:
+
+turn_on()
+turn_off()
+
+Implement:
+
+SmartFan
+SmartLight
+SmartAC
+34. Cloud Storage Interface
+
+Methods:
+
+upload()
+download()
+
+Implement:
+
+GoogleDrive
+Dropbox
+35. Messaging Application
+
+Methods:
+
+send_message()
+
+Implement:
+
+WhatsApp
+Telegram
+Signal
+36. Payment Interface
+
+Methods:
+
+pay()
+
+Implement:
+
+PayPal
+Stripe
+Razorpay
+37. Social Login System
+
+Methods:
+
+login()
+
+Implement:
+
+GoogleLogin
+GitHubLogin
+LinkedInLogin
+38. File Compression Tool
+
+Methods:
+
+compress()
+
+Implement:
+
+ZIPCompression
+RARCompression
+39. Navigation System
+
+Methods:
+
+navigate()
+
+Implement:
+
+GoogleMaps
+AppleMaps
+40. AI Chatbot System
+
+Methods:
+
+reply()
+
+Implement:
+
+SupportBot
+SalesBot
+PART 5 — Advanced OOP Design Problems
+41. Cab Booking Application
+
+Features:
+
+User booking
+Driver assignment
+Fare calculation
+
+Use:
+
+inheritance
+abstraction
+polymorphism
+42. E-Commerce Order Processing
+
+Implement:
+
+products
+orders
+payment methods
+delivery system
+43. Railway Reservation System
+
+Classes:
+
+Passenger
+Ticket
+Train
+
+Add booking logic.
+
+44. Online Examination System
+
+Features:
+
+Student
+Exam
+Result
+
+Use abstract classes for exams.
+
+45. Food Ordering Application
+
+Implement:
+
+menu
+orders
+payment
+discounts
+46. Hotel Booking System
+
+Implement:
+
+room types
+booking
+pricing
+47. School ERP System
+
+Features:
+
+attendance
+exams
+student records
+teacher management
+48. Inventory Management System
+
+Features:
+
+stock
+suppliers
+billing
+49. Movie Streaming Platform
+
+Features:
+
+movies
+subscriptions
+watch history
+
+Use abstract subscription plans.
+
+50. Cryptocurrency Wallet System
+
+Features:
+
+wallet
+transactions
+deposits
+withdrawals
+
+Implement secure transaction architecture.

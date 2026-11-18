@@ -1,0 +1,512 @@
+Real-World Logical Python OOP Problems
+(Inheritance + Abstract Class + Polymorphism)
+
+These are better for interviews because they focus on:
+
+logical thinking
+reusable design
+business rules
+object-oriented reasoning
+
+instead of large system design.
+
+1. Employee Bonus Calculator
+Problem Statement
+
+A company gives bonuses differently based on employee type.
+
+Create:
+
+abstract class Employee
+child classes:
+Developer
+Manager
+Intern
+
+Rules:
+
+Developer → 20% bonus
+Manager → 35% bonus
+Intern → fixed ₹5000 bonus
+Requirements
+
+Methods:
+
+calculate_bonus()
+display_details()
+Concepts
+Abstract class
+Method overriding
+Business logic
+2. Delivery Charge Calculator
+Problem Statement
+
+A delivery company calculates delivery charges differently.
+
+Create:
+
+abstract class Delivery
+
+Child classes:
+
+BikeDelivery
+TruckDelivery
+DroneDelivery
+
+Rules:
+
+Bike → ₹5/km
+Truck → ₹15/km
+Drone → ₹20/km
+Input Example
+
+Distance = 10 km
+
+Expected Output
+Bike Delivery Charge = 50
+Truck Delivery Charge = 150
+3. Electricity Bill Generator
+Problem Statement
+
+Electricity bills are calculated differently for:
+
+Residential users
+Commercial users
+Industrial users
+
+Create abstract class ElectricityBill.
+
+Rules
+
+Residential:
+
+Bill=Units×5
+
+Commercial:
+
+Bill=Units×8
+
+Industrial:
+
+Bill=Units×12
+
+Concepts
+Runtime polymorphism
+Real-world billing logic
+4. Vehicle Parking Fee System
+Problem Statement
+
+Parking fees vary by vehicle type.
+
+Create:
+
+abstract class Vehicle
+
+Child classes:
+
+Bike
+Car
+Bus
+
+Rules:
+
+Bike → ₹10/hour
+Car → ₹30/hour
+Bus → ₹50/hour
+5. Online Shopping Discount System
+Problem Statement
+
+Different customer types receive different discounts.
+
+Create:
+
+abstract class Customer
+
+Child:
+
+RegularCustomer
+PremiumCustomer
+VIPCustomer
+
+Rules:
+
+Regular → 5%
+Premium → 10%
+VIP → 20%
+6. Exam Evaluation System
+Problem Statement
+
+Marks are evaluated differently.
+
+Create:
+
+abstract class Exam
+
+Child:
+
+MCQExam
+PracticalExam
+VivaExam
+
+Each calculates grades differently.
+
+7. Cab Fare Calculator
+Problem Statement
+
+Cab fares differ based on ride type.
+
+Create:
+
+abstract class Ride
+
+Child:
+
+MiniRide
+SedanRide
+SUVRide
+
+Rules:
+
+Mini → ₹10/km
+Sedan → ₹15/km
+SUV → ₹20/km
+8. Salary Tax Calculator
+Problem Statement
+
+Tax calculation differs by employee category.
+
+Create:
+
+abstract class TaxPayer
+
+Child:
+
+GovernmentEmployee
+PrivateEmployee
+Freelancer
+9. Food Billing System
+Problem Statement
+
+Restaurants apply different GST percentages.
+
+Create:
+
+abstract class FoodItem
+
+Child:
+
+VegFood
+NonVegFood
+Beverage
+
+Rules:
+
+Veg → 5%
+NonVeg → 12%
+Beverage → 18%
+10. Loan Interest Calculator
+Problem Statement
+
+Banks offer different interest rates.
+
+Create:
+
+abstract class Loan
+
+Child:
+
+HomeLoan
+CarLoan
+EducationLoan
+Formula
+
+Interest=
+100
+P×R×T
+	​
+
+
+11. Shape Drawing Application
+Problem Statement
+
+A drawing app supports multiple shapes.
+
+Create abstract class Shape.
+
+Child:
+
+Circle
+Rectangle
+Triangle
+
+Each implements:
+
+draw()
+area()
+12. Authentication System
+Problem Statement
+
+Users can login using multiple methods.
+
+Create:
+
+abstract class Authentication
+
+Child:
+
+OTPAuth
+GoogleAuth
+FingerprintAuth
+13. File Export System
+Problem Statement
+
+Application exports files in multiple formats.
+
+Create:
+
+abstract class Exporter
+
+Child:
+
+PDFExporter
+ExcelExporter
+CSVExporter
+14. Employee Attendance Tracker
+Problem Statement
+
+Attendance calculation differs.
+
+Create:
+
+abstract class Employee
+
+Child:
+
+FullTimeEmployee
+PartTimeEmployee
+ContractEmployee
+15. Payment Processing System
+Problem Statement
+
+Payment methods process payments differently.
+
+Create:
+
+abstract class Payment
+
+Child:
+
+CreditCard
+DebitCard
+UPI
+16. Hospital Billing System
+Problem Statement
+
+Hospital charges differ by patient type.
+
+Create:
+
+abstract class Patient
+
+Child:
+
+GeneralPatient
+ICUPatient
+EmergencyPatient
+17. Smart Appliance Controller
+Problem Statement
+
+Different appliances behave differently.
+
+Create:
+
+abstract class Appliance
+
+Child:
+
+Fan
+AC
+WashingMachine
+18. Report Card Generator
+Problem Statement
+
+Different grading systems exist.
+
+Create:
+
+abstract class Student
+
+Child:
+
+SchoolStudent
+CollegeStudent
+
+Each generates grades differently.
+
+19. Courier Service Pricing
+Problem Statement
+
+Pricing depends on package type.
+
+Create:
+
+abstract class Courier
+
+Child:
+
+NormalCourier
+ExpressCourier
+SameDayCourier
+20. Ticket Booking System
+Problem Statement
+
+Ticket prices differ by seat category.
+
+Create:
+
+abstract class Ticket
+
+Child:
+
+SilverTicket
+GoldTicket
+PlatinumTicket
+21. Online Subscription Plans
+Problem Statement
+
+Streaming app has multiple subscription plans.
+
+Create:
+
+abstract class Subscription
+
+Child:
+
+BasicPlan
+StandardPlan
+PremiumPlan
+
+Each has different:
+
+price
+screen limits
+22. Notification Service
+Problem Statement
+
+Application sends notifications differently.
+
+Create:
+
+abstract class Notification
+
+Child:
+
+EmailNotification
+SMSNotification
+PushNotification
+23. Banking Withdrawal System
+Problem Statement
+
+Withdrawal rules vary by account type.
+
+Create:
+
+abstract class Account
+
+Child:
+
+SavingsAccount
+CurrentAccount
+24. Ride Sharing App Surge Pricing
+Problem Statement
+
+Surge pricing differs.
+
+Create:
+
+abstract class RidePricing
+
+Child:
+
+NormalTime
+PeakTime
+RainTime
+25. Employee Work Report System
+Problem Statement
+
+Different employees submit reports differently.
+
+Create:
+
+abstract class WorkReport
+
+Child:
+
+DeveloperReport
+TesterReport
+ManagerReport
+26. Water Bill Calculator
+Problem Statement
+
+Water charges vary by usage type.
+
+Create:
+
+Residential
+Commercial
+Agricultural
+27. Game Character Attack System
+Problem Statement
+
+Game characters attack differently.
+
+Create:
+
+abstract class Character
+
+Child:
+
+Archer
+Warrior
+Mage
+28. Transport Ticket Pricing
+Problem Statement
+
+Transport fares differ.
+
+Create:
+
+Bus
+Train
+Flight
+29. Insurance Premium Calculator
+Problem Statement
+
+Insurance premium varies.
+
+Create:
+
+HealthInsurance
+CarInsurance
+LifeInsurance
+30. Chatbot Reply System
+Problem Statement
+
+Different bots reply differently.
+
+Create:
+
+SupportBot
+SalesBot
+FAQBot
+Why These Problems Are Better for Interviews
+
+These focus on:
+
+business logic
+abstraction thinking
+code reusability
+real-world implementation
+polymorphism
+
+instead of only large architectures.
