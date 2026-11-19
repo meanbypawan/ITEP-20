@@ -1,0 +1,63 @@
+Q1. Longest Substring Without Repeating Characters
+
+Write a Python program to find the length of the longest substring that contains no repeating characters.
+
+Example:
+Input: abcabcbb
+Output: 3
+
+Explanation: "abc" is the longest substring.
+
+
+Q2. String Anagram
+
+Write a program to check whether two given strings are anagrams of each other.
+
+Anagrams contain the same characters with the same frequency, but in a different order.
+Input:
+String 1: listen
+String 2: silent
+
+Output: Anagram
+
+
+Do not use sorted().
+
+Q3. Longest Palindromic Substring
+
+Write a program to find the longest palindromic substring in a given string.
+Input: babad
+Output: bab
+
+
+Note: aba is also a valid answer.
+
+Q4. String Compression
+
+Write a program to compress a string by replacing consecutive repeated characters with the character followed by its frequency.
+Input: aaabbccccdaa
+
+Output: a3b2c4d1a2
+Q5. OOP Programming Question: Product Management System
+Intermediate Level
+ 10 Marks
+
+
+Problem Statement:
+
+Develop a Product Management System using Python OOP concepts.
+
+Create a class named Product with the following attributes:
+- product_id
+- product_name
+- category
+- price
+Requirements
+1. Create a Product class with an appropriate constructor.
+2. Create at least 5 product objects with different prices.
+3. Store all product objects inside a list.
+4. Implement a method display_product() to display product details.
+5. Find and display the product having the second-highest price.
+6. Display all products whose price is greater than ₹10,000.
+7. Calculate and display the average price of all products.
+8. Product must be unique on the basis of id
