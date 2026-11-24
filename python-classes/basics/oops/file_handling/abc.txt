@@ -1,0 +1,7 @@
+What is Python?
+1.Python is high level programming language
+2. Python is dynamically typed
+3. Python is open source
+4. Python platform independent
+5. It is synchronous by default
+6. It is multiparadigm language

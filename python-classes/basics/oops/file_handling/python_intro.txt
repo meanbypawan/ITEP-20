@@ -1,0 +1,5 @@
+Python is very simple.Python is robust
+Python has strong memory management mechanism
+
+Python is robust
+Python has strong memory management mechanism

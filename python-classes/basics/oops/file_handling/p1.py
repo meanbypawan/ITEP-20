@@ -1,0 +1,7 @@
+#f = open("abc.txt","w")
+#f = open("abc.txt","r")
+#f = open("abc.txt","a")
+#f = open("abc.txt","r+") 
+#f = open("abc.txt","w+")
+f = open("abc.txt","x")
+print(f"Cursor position in w+ : {f.tell()}")
